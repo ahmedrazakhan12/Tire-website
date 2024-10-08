@@ -1,5 +1,6 @@
 {
-  "name": "car-fixing",
+  "name": "tirealigners",
+  "homepage": "https://tirealigners.com/",
   "private": true,
   "version": "0.0.0",
   "type": "module",

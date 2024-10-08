@@ -1,6 +1,7 @@
-import { BarChart, ShoppingCart } from 'lucide-react';
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { BarChart, ShoppingCart } from "lucide-react";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/images/logo.png";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -25,20 +26,25 @@ const Header = () => {
 
   return (
     <div>
-      <div className="above-site-header">The Home of Wholesale Tire Pricing</div>
+      <div className="above-site-header">
+        The Home of Wholesale Tire Pricing
+      </div>
       <div className="site-header">
         <div className="site-header-logo-box">
           <Link to="/">
             <img
               className="site-header-logo"
-              src="https://tirealigners.com/public/images/logo/logo.png"
+              src={logo}
               alt="Tires Etc"
-              style={{ transform: 'translate(20px) scale(2.6)', position: 'absolute' }} // Scale to zoom in
+              style={{
+                transform: "translate(20px) scale(2.6)",
+                position: "absolute",
+              }} // Scale to zoom in
             />
           </Link>
         </div>
 
-        <div className="site-header-nav" style={{ marginLeft: '200px' }}>
+        <div className="site-header-nav" style={{ marginLeft: "200px" }}>
           <div>
             <Link to="/">Tires</Link>
             <div className="site-header-sub-menu">
@@ -56,7 +62,7 @@ const Header = () => {
               <Link to="/service/brakes/">Brakes</Link>
               <Link to="/service/mufflers">Mufflers</Link>
               <Link to="/service/rim/">Rim</Link>
-              <Link to="/service/suspension">Suspension</Link>
+              <Link to="/service/suspention">Suspension</Link>
               <Link to="/service/towing/">Towing Service</Link>
             </div>
           </div>
@@ -66,7 +72,7 @@ const Header = () => {
             <div className="site-header-sub-menu">
               <Link to="/specials/tire-specials/">Tire Specials</Link>
               <Link to="/specials/service-specials/">Service Specials</Link>
-              <Link to="/specials/interest-free/">Interest Free Financing</Link>
+              <Link to="/specials/interest-fee">Interest Free Financing</Link>
             </div>
           </div>
 
@@ -81,18 +87,17 @@ const Header = () => {
         <div className="site-header-right-container">
           <div className="site-header-right-column">
             <div className="site-header-right-row">
-              <div className="site-header-cart-icon">
-              </div>
+              <div className="site-header-cart-icon"></div>
             </div>
             <div className="site-header-account-block">
               <div className="site-header-right-row">
                 <button
-                  onClick={() => navigate('/appointment')}
+                  onClick={() => navigate("/appointment")}
                   style={{
-                    backgroundColor: '#F2184F',
-                    color: 'white',
-                    borderRadius: '5px',
-                    padding: '10px 20px',
+                    backgroundColor: "#F2184F",
+                    color: "white",
+                    borderRadius: "5px",
+                    padding: "10px 20px",
                   }}
                 >
                   Get Appointments
@@ -112,7 +117,7 @@ const Header = () => {
 
           <div className="site-header-right-mobile">
             <button onClick={toggleMobileMenuDisplay}>
-              <BarChart  color='red'/>
+              <BarChart color="red" />
             </button>
           </div>
         </div>
@@ -121,66 +126,127 @@ const Header = () => {
       {mobileDisplay && (
         <>
           <div className="wrapper">
-            <nav id="sidebar" className={mobileDisplay ? 'active' : ''}>
+            <nav id="sidebar" className={mobileDisplay ? "active" : ""}>
               <div id="dismiss" onClick={closeSidebar}>
                 <i className="glyphicon glyphicon-arrow-left"></i>
               </div>
 
-          <Link to="/">
-            <img
-              src="https://tirealigners.com/public/images/logo/logo.png"
-              alt="Tires Etc"
-              style={{width:"250px" , height:"160px"}}
-            />
-          </Link>
+              <Link to="/">
+                <img
+                  src="https://tirealigners.com/public/images/logo/logo.png"
+                  alt="Tires Etc"
+                  style={{ width: "250px", height: "160px" }}
+                />
+              </Link>
 
               <ul className="list-unstyled components">
                 <li>
-                  <Link to="/" onClick={closeSidebar}>Home</Link>
+                  <Link to="/" onClick={closeSidebar}>
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <Link onClick={() => toggleSubmenu('services')}>Services</Link>
-                  {openSubmenu === 'services' && (
+                  <Link onClick={() => toggleSubmenu("services")}>
+                    Services
+                  </Link>
+                  {openSubmenu === "services" && (
                     <ul className="list-unstyled">
-                      <li><Link to="/service/" onClick={closeSidebar}>All Services</Link></li>
-                      <li><Link to="/service/alignment" onClick={closeSidebar}>Alignments</Link></li>
-                      <li><Link to="/service/oil-change/" onClick={closeSidebar}>Oil Change</Link></li>
-                      <li><Link to="/service/brakes/" onClick={closeSidebar}>Brakes</Link></li>
-                      <li><Link to="/service/mufflers" onClick={closeSidebar}>Mufflers</Link></li>
-                      <li><Link to="/service/rim/" onClick={closeSidebar}>Rim</Link></li>
-                      <li><Link to="/service/suspension" onClick={closeSidebar}>Suspension</Link></li>
-                      <li><Link to="/service/towing/" onClick={closeSidebar}>Towing Service</Link></li>
+                      <li>
+                        <Link to="/service/" onClick={closeSidebar}>
+                          All Services
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/service/alignment" onClick={closeSidebar}>
+                          Alignments
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/service/oil-change/" onClick={closeSidebar}>
+                          Oil Change
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/service/brakes/" onClick={closeSidebar}>
+                          Brakes
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/service/mufflers" onClick={closeSidebar}>
+                          Mufflers
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/service/rim/" onClick={closeSidebar}>
+                          Rim
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/service/suspention" onClick={closeSidebar}>
+                          Suspension
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/service/towing/" onClick={closeSidebar}>
+                          Towing Service
+                        </Link>
+                      </li>
                     </ul>
                   )}
                 </li>
                 <li>
-                  <Link onClick={() => toggleSubmenu('specials')}>Specials</Link>
-                  {openSubmenu === 'specials' && (
+                  <Link onClick={() => toggleSubmenu("specials")}>
+                    Specials
+                  </Link>
+                  {openSubmenu === "specials" && (
                     <ul className="list-unstyled">
-                      <li><Link to="/specials/tire-specials/" onClick={closeSidebar}>Tire Specials</Link></li>
-                      <li><Link to="/specials/service-specials/" onClick={closeSidebar}>Service Specials</Link></li>
-                      <li><Link to="/specials/interest-free/" onClick={closeSidebar}>Interest Free Financing</Link></li>
+                      <li>
+                        <Link
+                          to="/specials/tire-specials/"
+                          onClick={closeSidebar}
+                        >
+                          Tire Specials
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/specials/service-specials/"
+                          onClick={closeSidebar}
+                        >
+                          Service Specials
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/specials/interest-fee"
+                          onClick={closeSidebar}
+                        >
+                          Interest Free Financing
+                        </Link>
+                      </li>
                     </ul>
                   )}
                 </li>
                 <li>
-                  <Link to="/about-us" onClick={closeSidebar}>About</Link>
+                  <Link to="/about-us" onClick={closeSidebar}>
+                    About
+                  </Link>
                 </li>
               </ul>
               <div className="site-header-account-block">
-              <div className="d-flex justify-content-center">
-                <button
-                  onClick={() => navigate('/appointment')}
-                  style={{
-                    backgroundColor: '#F2184F',
-                    color: 'white',
-                    borderRadius: '5px',
-                    padding: '10px 20px',
-                  }}
-                >
-                  Get Appointments
-                </button>
-              </div>
+                <div className="d-flex justify-content-center">
+                  <button
+                    onClick={() => navigate("/appointment")}
+                    style={{
+                      backgroundColor: "#F2184F",
+                      color: "white",
+                      borderRadius: "5px",
+                      padding: "10px 20px",
+                    }}
+                  >
+                    Get Appointments
+                  </button>
+                </div>
               </div>
             </nav>
 
@@ -194,50 +260,46 @@ const Header = () => {
 
 export default Header;
 
+//      <div className="site-header-mobile-menu">
+//      <div className="menu-item">
+//        <div className="sub-menu d-block">
 
- //      <div className="site-header-mobile-menu">
-    //      <div className="menu-item">
-    //        <div className="sub-menu d-block">
-            
-    //          <Link to="/">Tires</Link><br/>
-    //          <Link to="/tires/search-by/vehicle/">Search by Vehicle</Link><br/>
-    //          <Link to="/tires/search-by/size/">Search by Size</Link><br/>
-    //          <Link to="/tires/search-by/brand/">Search by Brand</Link><br/>
-    //        </div>
-    //      </div>
- 
-       
- 
-    //      <Link to="/service/">Services</Link><br/>
-    //         <div className="sub-menu">
-    //           <Link to="/service/">All Services</Link><br/>
-    //           <Link to="/service/alignment">Alignments</Link><br/>
-    //           <Link to="/service/oil-change/">Oil Change</Link><br/>
-    //           <Link to="/service/brakes/">Brakes</Link><br/>
-    //           <Link to="/service/mufflers">Mufflers</Link><br/>
-    //           <Link to="/service/rim/">Rim</Link><br/>
-    //           <Link to="/service/suspension">Suspension</Link><br/>
-    //           <Link to="/service/towing/">Towing Service</Link><br/>
-    //         </div>   
-      
-    //      <div className="menu-item">
-    //        Specials
-    //        <div className="sub-menu">
-    //          <Link to="/specials/tire-specials/">Tire Specials</Link>
-    //          <Link to="/specials/service-specials/">Service Specials</Link>
-    //          <Link to="/financing/">Interest Free Financing</Link>
-    //        </div>
-    //      </div>
- 
-    //      <div className="menu-item">
-    //        About
-    //        <div className="sub-menu">
-    //          <Link to="/contact-us/">Contact Us</Link>
-    //        </div>
-    //      </div>
- 
-       
-    //    </div>
+//          <Link to="/">Tires</Link><br/>
+//          <Link to="/tires/search-by/vehicle/">Search by Vehicle</Link><br/>
+//          <Link to="/tires/search-by/size/">Search by Size</Link><br/>
+//          <Link to="/tires/search-by/brand/">Search by Brand</Link><br/>
+//        </div>
+//      </div>
+
+//      <Link to="/service/">Services</Link><br/>
+//         <div className="sub-menu">
+//           <Link to="/service/">All Services</Link><br/>
+//           <Link to="/service/alignment">Alignments</Link><br/>
+//           <Link to="/service/oil-change/">Oil Change</Link><br/>
+//           <Link to="/service/brakes/">Brakes</Link><br/>
+//           <Link to="/service/mufflers">Mufflers</Link><br/>
+//           <Link to="/service/rim/">Rim</Link><br/>
+//           <Link to="/service/suspention">Suspension</Link><br/>
+//           <Link to="/service/towing/">Towing Service</Link><br/>
+//         </div>
+
+//      <div className="menu-item">
+//        Specials
+//        <div className="sub-menu">
+//          <Link to="/specials/tire-specials/">Tire Specials</Link>
+//          <Link to="/specials/service-specials/">Service Specials</Link>
+//          <Link to="/financing/">Interest Free Financing</Link>
+//        </div>
+//      </div>
+
+//      <div className="menu-item">
+//        About
+//        <div className="sub-menu">
+//          <Link to="/contact-us/">Contact Us</Link>
+//        </div>
+//      </div>
+
+//    </div>
 // import { ShoppingCart, User2 } from 'lucide-react'
 // import React from 'react'
 // import { Link, useNavigate } from 'react-router-dom'
@@ -248,7 +310,7 @@ export default Header;
 //         const mobileMenu = document.getElementById('mobile-nav');
 //         mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
 //       }
-      
+
 //     return (
 //     <div>
 //           <div className="above-site-header">The Home of Wholesale Tire Pricing</div>
@@ -271,7 +333,7 @@ export default Header;
 //             <Link to="/search-by-size/">Search by Size</Link>
 //           </div>
 //         </div>
-    
+
 //         <div>
 //           <Link to="/service/">Services</Link>
 //           <div className="site-header-sub-menu">
@@ -299,7 +361,7 @@ export default Header;
 //           <Link to="/about-us">Contact Us</Link>
 //           </div>
 //         </div>
-     
+
 //       </div>
 //       <div className="site-header-right-container">
 //         <div className="site-header-right-column">

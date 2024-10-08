@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./screens/Home";
@@ -22,7 +22,6 @@ import SearchByVehicle from "./screens/SearchByVehicle";
 function App() {
   return (
     <>
-
       <Router>
         <Header />
         <Routes>
@@ -37,50 +36,69 @@ function App() {
           <Route path="/service/towing" element={<Towing />} />
           <Route path="/specials" element={<TireSpecial />} />
           <Route path="/specials/tire-specials" element={<TireSpecial />} />
-          <Route path="/specials/service-specials" element={<ServiceSpecial />} />
+          <Route
+            path="/specials/service-specials"
+            element={<ServiceSpecial />}
+          />
           <Route path="/specials/interest-fee" element={<IntrestFee />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/search-by-size" element={<SearchBySize />} />
           <Route path="/search-by-vehicle" element={<SearchByVehicle />} />
 
-          <Route path="*" element={
-            <>
-            <section class="page_404">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 ">
-        <div class="col-sm-10 col-sm-offset-1  text-center">
-          <div class="four_zero_four_bg">
-            <h1 class="text-center ">404</h1>
+          <Route
+            path="*"
+            element={
+              <>
+                <section class="page_404">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-12 ">
+                        <div class="col-sm-10 col-sm-offset-1  text-center">
+                          <div class="four_zero_four_bg">
+                            <h1 class="text-center ">404</h1>
+                          </div>
 
-          </div>
+                          <div class="contant_box_404">
+                            <h3 class="h2">Look like you're lost</h3>
 
-          <div class="contant_box_404">
-            <h3 class="h2">
-              Look like you're lost
-            </h3>
+                            <p>the page you are looking for not avaible!</p>
 
-            <p>the page you are looking for not avaible!</p>
-
-            <a href="" class="link_404">Go to Home</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-</>
-            } />
+                            <Link to="/" class="link_404">
+                              Go to Home
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </>
+            }
+          />
           {/* <Route path="/contact" element={<Contact />} /> */}
         </Routes>
         <Footer />
-      <div
-        className="  "
-        style={{ color: "rgb(32 44 69)", background: "rgb(32 44 69)" ,userSelect:'none' }}
-      >
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam magni perferendis modi quam ipsa! A eaque consequatur iusto. Enim cupiditate quasi vero provident ipsum ipsam iste fugiat blanditiis. Commodi sapiente non neque enim! Cupiditate pariatur officia maiores vero, neque molestias beatae nulla voluptatibus nam, deleniti autem iusto, rerum distinctio maxime vel dicta ducimus. Beatae recusandae ipsam cupiditate corrupti nihil voluptatibus id tempora, officia ab ex molestiae magnam autem nesciunt temporibus vero quasi impedit a. Culpa possimus voluptatem sit nam dolor ipsa, sequi repudiandae? Repudiandae corrupti dolorem, rem perferendis doloribus error minus quae inventore libero, fugiat provident magnam modi earum. Adipisci.
-      </div>
+        <div
+          className="  "
+          style={{
+            color: "rgb(32 44 69)",
+            background: "rgb(32 44 69)",
+            userSelect: "none",
+          }}
+        >
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
+          magni perferendis modi quam ipsa! A eaque consequatur iusto. Enim
+          cupiditate quasi vero provident ipsum ipsam iste fugiat blanditiis.
+          Commodi sapiente non neque enim! Cupiditate pariatur officia maiores
+          vero, neque molestias beatae nulla voluptatibus nam, deleniti autem
+          iusto, rerum distinctio maxime vel dicta ducimus. Beatae recusandae
+          ipsam cupiditate corrupti nihil voluptatibus id tempora, officia ab ex
+          molestiae magnam autem nesciunt temporibus vero quasi impedit a. Culpa
+          possimus voluptatem sit nam dolor ipsa, sequi repudiandae? Repudiandae
+          corrupti dolorem, rem perferendis doloribus error minus quae inventore
+          libero, fugiat provident magnam modi earum. Adipisci.
+        </div>
       </Router>
     </>
   );
