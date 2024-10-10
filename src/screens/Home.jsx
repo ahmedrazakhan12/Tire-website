@@ -19,8 +19,33 @@ import Rim from "../assets/images/rim.jpeg";
 import Towing from "../assets/images/tow-car.png";
 
 import "../App.css";
+import { toast } from "react-toastify";
 const Home = () => {
   const [tabs, setTabs] = useState("vehicle");
+
+
+    // State variables to hold the selected values
+    const [year, setYear] = useState('');
+    const [make, setMake] = useState('');
+    const [model, setModel] = useState('');
+    const [trim, setTrim] = useState('');
+  
+    // Handler for form submission
+    const handleSubmit = (event) => {
+      event.preventDefault(); // Prevent default form submission
+  
+      // Check if all selects have valid values
+      if (year && make && model && trim) {
+        // If all fields are selected, navigate to the desired URL
+        window.location.href = '/tires/catalog';
+      } else {
+        // Optionally, alert the user or display a message
+        toast.error('Please select all options before proceeding.');
+        // alert('Please select all options before proceeding.');
+      }
+    };
+
+    
 
   return (
     <>
@@ -208,30 +233,66 @@ const Home = () => {
                 </li>
               </ul>
               {tabs === "vehicle" && (
-                <form>
-                  <select class="form-select" aria-label="Year">
-                    <option selected>Year</option>
-                    {[...Array(2025 - 1980).keys()].map((year) => (
-                      <option key={year} value={2023 - year}>
-                        {2023 - year}
-                      </option>
-                    ))}
-                  </select>
-                  <select class="form-select" aria-label="Make">
-                    <option selected>Make</option>
-                  </select>
-                  <select class="form-select" aria-label="Model">
-                    <option selected>Model</option>
-                  </select>
-                  <select class="form-select" aria-label="Trim">
-                    <option selected>Trim</option>
-                  </select>
-                  <button type="submit" class="btn btn-shop">
-                    <span className="  w-6" style={{ color: "white" }}>
-                      SHOP TIRES & BOOK APPOINTMENT
-                    </span>
-                  </button>
-                </form>
+                 <form onSubmit={handleSubmit}>
+                 <select className="form-select" aria-label="Year" value={year} onChange={(e) => setYear(e.target.value)} >
+                   <option value="" disabled>
+                     Year
+                   </option>
+                   {[...Array(2025 - 1980).keys()].map((_, index) => (
+                     <option key={index} value={2023 - index}>
+                       {2023 - index}
+                     </option>
+                   ))}
+                 </select>
+           
+                 <select className="form-select" aria-label="Make" value={make} onChange={(e) => setMake(e.target.value)} >
+                   <option value="" disabled>
+                     Make
+                   </option>
+                   <option value="custom1" >
+                     custom
+                   </option>
+                   <option value="custom2" >
+                   custom 2
+
+                   </option>
+                   {/* Add options for makes here */}
+                 </select>
+           
+                 <select className="form-select" aria-label="Model" value={model} onChange={(e) => setModel(e.target.value)} >
+                   <option value="" disabled>
+                     Model
+                   </option>
+                   <option value="model1">
+                     Model
+                   </option>
+                   <option value="model2">
+                     Model 2
+                   </option>
+                   {/* Add options for models here */}
+                 </select>
+           
+                 <select className="form-select" aria-label="Trim" value={trim} onChange={(e) => setTrim(e.target.value)} >
+                   <option value="" disabled>
+                     Trim
+                   </option>
+
+                   <option value="Trim1">
+                     Trim 1
+                   </option>
+                   <option value="Trim2">
+                   Trim 2
+                   </option>
+                   {/* Add options for trims here */}
+                 </select>
+           
+                 <button type="submit" className="btn btn-shop">
+                   <span className="w-6" style={{ color: 'white' }}>
+                     SHOP TIRES & BOOK APPOINTMENT
+                   </span>
+                 </button>
+               </form>
+           
               )}
 
               {tabs === "size" && (

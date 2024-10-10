@@ -129,10 +129,34 @@ import SearchByVehicle from "./screens/SearchByVehicle";
 import ContactUS from "./screens/ContactUs";
 import Register from "./components/Register";
 import Login from "./components/Login";
-
+import Catalog from "./screens/Catalog";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import ViewCart from "./screens/ViewCart";
 function App() {
   return (
     <>
+
+
+<ToastContainer
+  position="top-right"
+  autoClose={5000}
+  hideProgressBar={false}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  toastStyle={{
+    fontFamily: "JosefinSans",
+  }}
+  progressClassName="progress-bar"
+  toastClassName="custom-toast"
+  icon={'🛒'}
+/>
+
+
       <Router>
         <Header />
         <Routes>
@@ -151,6 +175,8 @@ function App() {
             path="/specials/service-specials"
             element={<ServiceSpecial />}
           />
+
+          
           <Route path="/specials/interest-fee" element={<IntrestFee />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/contact-us" element={<ContactUS />} />
@@ -159,6 +185,15 @@ function App() {
           <Route path="/search-by-vehicle" element={<SearchByVehicle />} />
           <Route path="/create-account" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route
+            path="/tires/catalog"
+            element={<Catalog />}
+          />
+  <Route
+            path="/view-cart"
+            element={<ViewCart />}
+          />
+
 
           <Route
             path="*"

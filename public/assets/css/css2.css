@@ -48,7 +48,7 @@ button.link,
 button.link:not([href]):not([tabindex]),
 a:not([href]):not([tabindex]) {
   text-decoration: none;
-  color: #005f9e;
+  color: #F2184F;
   cursor: pointer;
 }
 
@@ -199,7 +199,7 @@ button.link-inline {
 
 .btn-primary {
   color: white;
-  background-color: #005f9e;
+  background-color: #F2184F;
 }
 
 .btn-primary:hover {
@@ -332,7 +332,7 @@ button.link-inline {
 }
 
 .tab-bar-item:hover {
-  background-color: #005f9e;
+  background-color: #F2184F;
   color: white;
 }
 
@@ -747,7 +747,7 @@ button.link-inline {
 .app-with-nav ul.app-nav li {
   border-bottom: solid #ddd 2px;
   padding: 1rem 2.5rem 1rem 1rem;
-  color: #005f9e;
+  color: #F2184F;
   font-size: 1.25em;
   font-weight: bold;
 }
@@ -1157,7 +1157,7 @@ button.unstyled.link-inline {
 }
 
 .pagination .fas {
-  color: #005f9e;
+  color: #F2184F;
   font-size: 28px;
 }
 
@@ -1180,7 +1180,7 @@ button.unstyled.link-inline {
 .pagination-small button,
 .pagination-small span {
   padding: 0 0.75em;
-  color: #005f9e;
+  color: #F2184F;
   border-top: solid #aaa 1px;
   border-bottom: solid #aaa 1px;
   border-right: solid #aaa 1px;
@@ -1195,7 +1195,7 @@ button.unstyled.link-inline {
 
 .pagination-small button:disabled,
 .pagination-small span:disabled {
-  background-color: #005f9e;
+  background-color: #F2184F;
   color: white;
   border-color: #666;
 }
@@ -1281,7 +1281,7 @@ button.unstyled.link-inline {
 }
 
 .color-blue {
-  color: #005f9e;
+  color: #F2184F;
 }
 
 .color-orange {
@@ -1632,7 +1632,7 @@ ul.small-horizontal-bordered li:last-of-type {
 }
 
 .site-header-nav div:hover {
-  color: #005f9e;
+  color: #F2184F;
 }
 
 .site-header-nav div:hover .site-header-sub-menu {
@@ -1700,7 +1700,7 @@ ul.small-horizontal-bordered li:last-of-type {
 .site-header-right-row:hover a,
 .site-header-right-row:hover button.link,
 .site-header-right-row:hover button.link-inline {
-  color: #005f9e;
+  color: #F2184F;
 }
 
 .site-header-right-row div {
@@ -2428,7 +2428,7 @@ ul.small-horizontal-bordered li:last-of-type {
 }
 
 .tire-search-param-head.active {
-  background-color: #005f9e;
+  background-color: #F2184F;
 }
 
 .tire-search-param-head.disabled {
@@ -2464,7 +2464,7 @@ ul.small-horizontal-bordered li:last-of-type {
   margin: 0.6em;
   border-radius: 8px;
   box-shadow: 0 0 8px #333;
-  color: #005f9e;
+  color: #F2184F;
   font-size: 1.2em;
   font-family: Montserrat, sans-serif;
 }
@@ -2607,7 +2607,7 @@ ul.small-horizontal-bordered li:last-of-type {
 .brand-page-models-container a.model-wrapper:hover,
 .brand-page-models-container button.model-wrapper.link:hover,
 .brand-page-models-container button.model-wrapper.link-inline:hover {
-  box-shadow: 0 0 16px #005f9e;
+  box-shadow: 0 0 16px #F2184F;
 }
 
 .brand-page-models-container a.model-wrapper img,
@@ -2744,20 +2744,34 @@ ul.detail-page-specs li span {
   justify-content: space-between;
   align-items: flex-start;
   overflow-x: auto;
+  
   margin-bottom: 15px;
   padding: 15px 9px 30px;
   border-bottom: solid #ddd 3px;
 }
 
+.m-result-card .gbb-card{
+  width: 100%;
+}
+
 @media screen and (max-width: 1100px) {
   .gbb {
-    padding: 9px 9px 18px;
+    /* padding: 9px 9px 18px; */
   }
 }
 
 @media screen and (max-width: 1024px) {
   .gbb {
-    display: none;
+  display: block;
+  margin: auto;
+  padding: 0px !important;
+  margin: 0 !important;
+  
+
+  }
+  .ahmed-div{
+    width: 97% !important;
+    margin-left: 5px !important;
   }
 }
 
@@ -2808,7 +2822,7 @@ ul.detail-page-specs li span {
 
 .gbb-carousel .carousel-indicators li {
   height: 5px;
-  background-color: #005f9e;
+  background-color: #F2184F;
   margin-left: 6px;
   margin-right: 6px;
 }
@@ -2835,7 +2849,7 @@ ul.detail-page-specs li span {
 }
 
 .catalog-head h1 span {
-  color: #005f9e;
+  color: #F2184F;
 }
 
 .catalog-container {
@@ -2866,7 +2880,7 @@ ul.detail-page-specs li span {
 }
 
 .clear-filters.blue {
-  color: #005f9e;
+  color: #F2184F;
 }
 
 .catalog-filters {
@@ -3016,7 +3030,7 @@ ul.detail-page-specs li span {
 }
 
 .catalog-filters .filter-item .filter-head.active {
-  color: #005f9e;
+  color: #F2184F;
 }
 
 .catalog-filters .filter-item .filter-head.active h4 {
@@ -3314,7 +3328,8 @@ ul.detail-page-specs li span {
 }
 
 .m-result-card {
-  display: none;
+    display: block;
+  /* display: none; */
   background-color: white;
   margin-bottom: 20px;
   padding: 7px;
@@ -3325,7 +3340,7 @@ ul.detail-page-specs li span {
 
 @media screen and (max-width: 700px) {
   .m-result-card {
-    display: block;
+    /* display: block; */
   }
 }
 
@@ -3429,7 +3444,7 @@ ul.detail-page-specs li span {
 }
 
 .m-result-card.gbb-card .gbb-card-header {
-  background-color: #005f9e;
+  background-color: #F2184F;
   color: white;
   text-align: center;
   padding: 8px;
@@ -3919,7 +3934,7 @@ table.fitment-options td.split-fitment {
 }
 
 .cart-fee .fee-header.discount {
-  background-color: #005f9e;
+  background-color: #F2184F;
   padding: 0.75rem 0.5rem;
   border-radius: 6px;
   color: white;
@@ -3988,7 +4003,7 @@ table.fitment-options td.split-fitment {
   border-radius: 0.25em;
   font-size: 1.4em;
   font-family: Roboto, sans-serif;
-  background-color: #005f9e;
+  background-color: #F2184F;
   color: white;
 }
 
@@ -4030,7 +4045,7 @@ table.fitment-options td.split-fitment {
 }
 
 .totals-box .row:last-of-type span:last-of-type {
-  color: #005f9e;
+  color: #F2184F;
   font-family: Montserrat, sans-serif;
 }
 
@@ -4455,7 +4470,7 @@ table.fitment-options td.split-fitment {
 
 .special-detail-h1 {
   font-size: 1.8em;
-  color: #005f9e;
+  color: #F2184F;
 }
 
 .special-detail-h2 {
@@ -4790,7 +4805,7 @@ table.fitment-options td.split-fitment {
   font-size: 1.5rem;
   font-weight: bold;
   font-family: Montserrat, sans-serif;
-  color: #005f9e;
+  color: #F2184F;
 }
 
 .calendar-header div {
@@ -4811,7 +4826,7 @@ table.calendar td {
 }
 
 table.calendar td.available {
-  color: #005f9e;
+  color: #F2184F;
   font-family: Roboto, sans-serif;
 }
 
@@ -4953,7 +4968,7 @@ table.calendar td.today {
   display: inline-block;
   padding: 2rem;
   border-radius: 50%;
-  background-color: #005f9e;
+  background-color: #F2184F;
   color: white;
   font-weight: bold;
   text-align: center;

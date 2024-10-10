@@ -46,6 +46,10 @@
   margin-bottom: 20px !important;
   text-align: center !important;
 }
+ 
+.progress-bar {
+  background-color: red !important;  /* Red progress bar (loader) */
+}
 
 .nav-tabs {
   color: #333 !important;
@@ -719,4 +723,144 @@ time {
   position: absolute;
   top: 10px;
   right: 10px;
+}
+
+
+/* Reset some default styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Shopping cart container */
+.shopping-cart {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Labels for the columns */
+.column-labels {
+  display: flex;
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.column-labels label {
+  flex: 1;
+  text-align: center;
+  padding: 5px;
+}
+
+/* Product items */
+.product {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.product-image img {
+  width: 80px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.product-details {
+  flex: 2;
+  padding-left: 10px;
+}
+
+.product-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.product-description {
+  font-size: 14px;
+  color: #777;
+}
+
+.product-price, 
+.product-line-price {
+  text-align: center;
+  width: 100px;
+}
+
+.product-quantity {
+  text-align: center;
+}
+
+.product-quantity input {
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Remove button */
+.product-removal {
+  text-align: center;
+}
+
+.remove-product {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.remove-product:hover {
+  background-color: #c82333;
+}
+
+/* Totals section */
+.totals {
+  margin-top: 20px;
+  border-top: 2px solid #ccc;
+  padding-top: 10px;
+}
+
+.totals-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.totals-item-total {
+  font-weight: bold;
+  color: #333;
+}
+
+.totals-value {
+  font-weight: bold;
+}
+
+/* Checkout button */
+.checkout {
+  display: block;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.checkout:hover {
+  background-color: #0056b3;
 }

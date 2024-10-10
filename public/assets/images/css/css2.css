@@ -2697,6 +2697,10 @@
     font-size: 4.8vw;
     margin: 0;
   }
+
+  .m-result-card.gbb-card:not(:first-of-type){
+    margin: 0px !important;
+  }
   .m-result-card .lead-row .qty {
     font-size: 1em;
   }
@@ -2752,14 +2756,16 @@
     width: 325px;
     flex: none;
   }
-  .m-result-card.gbb-card:not(:first-of-type) {
-    margin-left: 5vw;
+  .m-result-card.gbb-card {
+    margin: 0  !important;
   }
   @media screen and (max-width: 800px) {
     .m-result-card.gbb-card {
-      margin: 0 9px 20px 9px;
+      margin: 0  !important;
     }
+    
   }
+ 
   .m-result-card.gbb-card .gbb-card-header {
     background-color: #005f9e;
     color: white;
