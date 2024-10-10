@@ -1,9 +1,9 @@
 import { ShoppingBag, ShoppingCart } from 'lucide-react';
 import React from 'react'
 import { toast } from 'react-toastify';
-
-const Catalog = () => {
-    const tireData = [
+const Catalog = ({addToCart}) => {
+  
+  const tireData = [
       {
         id: 1,
         name: "Maxtour LX",
@@ -117,28 +117,7 @@ const Catalog = () => {
         ]
       }
     ];
-    const addToCart = (tire) => { 
-        // Get existing cart items from local storage (if any)
-        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        
-        // Add the new tire to the cart
-        cartItems.push(tire);
-        
-        // Update the local storage with the new cart items array
-        localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        
-        // Show success toast with red icon
-        toast.success("Addeds to Cart", {
-            icon: <ShoppingCart />,  // Custom icon
-            style: {
-              borderRadius: '8px',
-              color: '#F2184F',  // Custom text color
-            },
-          });
-          
-        // Optional: Log to check if the item was added successfully
-        console.log("Cart items updated:", cartItems);
-      };
+  
       
       // CSS for progress bar and toast customization
       const styles = `

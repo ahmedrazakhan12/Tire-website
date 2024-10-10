@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const ViewCart = () => {
-  const [cartItems, setCartItems] = useState([]);
+const ViewCart = ({cartItems, setCartItems , removeFromCart}) => {
   console.log("cartItems", cartItems);
 
   useEffect(() => {
@@ -34,20 +33,7 @@ const ViewCart = () => {
     }
   }, []);
   
-  const removeFromCart = (index) => {
-    const updatedCartItems = [...cartItems];
-
-    // If a valid index is provided, remove the item at that index
-    if (index !== -1) {
-      updatedCartItems.splice(index, 1); // Remove one item at the found index
-    }
-
-    console.log("updatedCartItems", updatedCartItems);
-    
-    // Update state and local storage
-    setCartItems(updatedCartItems);
-    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems)); // Update local storage
-  };
+ 
 
   const addToCart = (newItem) => {
     // Check if the item already exists in the cart

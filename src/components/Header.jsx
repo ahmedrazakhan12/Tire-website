@@ -88,6 +88,7 @@ const Header = () => {
           <div className="site-header-right-column">
             <div className="site-header-right-row">
               <div className="site-header-cart-icon"></div>
+             
             </div>
             <div className="site-header-account-block">
               <div className="site-header-right-row">
@@ -115,11 +116,16 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="site-header-right-mobile">
+            <div className="d-flex" style={{display:"flex"}}>
+            <div className="site-header-right-mobile">
             <button onClick={toggleMobileMenuDisplay}>
               <BarChart color="red" />
             </button>
+            
+             </div>
+          <div>
           </div>
+            </div>
         </div>
       </div>
 
