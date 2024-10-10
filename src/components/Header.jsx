@@ -78,9 +78,9 @@ const Header = () => {
 
           <div>
             <Link to="/about-us">About</Link>
-            <div className="site-header-sub-menu">
-              <Link to="/about-us">Contact Us</Link>
-            </div>
+          </div>
+          <div className="site-header-sub-menu">
+            <Link to="/contact-us">Contact</Link>
           </div>
         </div>
 
@@ -108,8 +108,8 @@ const Header = () => {
                   <em>Not signed in</em>
                 </p>
                 <p>
-                  <Link to="/accounts/login/">Sign In</Link> &nbsp;|&nbsp;
-                  <Link to="/accounts/signup/">Register</Link>
+                  <Link to="/login">Sign In</Link> &nbsp;|&nbsp;
+                  <Link to="/create-account">Register</Link>
                 </p>
               </div>
             </div>
@@ -133,7 +133,7 @@ const Header = () => {
 
               <Link to="/">
                 <img
-                  src="https://tirealigners.com/public/images/logo/logo.png"
+                  src={logo}
                   alt="Tires Etc"
                   style={{ width: "250px", height: "160px" }}
                 />
@@ -232,6 +232,11 @@ const Header = () => {
                     About
                   </Link>
                 </li>
+                <li>
+                  <Link to="/contact-us" onClick={closeSidebar}>
+                    Contact
+                  </Link>
+                </li>
               </ul>
               <div className="site-header-account-block">
                 <div className="d-flex justify-content-center">
@@ -259,224 +264,3 @@ const Header = () => {
 };
 
 export default Header;
-
-//      <div className="site-header-mobile-menu">
-//      <div className="menu-item">
-//        <div className="sub-menu d-block">
-
-//          <Link to="/">Tires</Link><br/>
-//          <Link to="/tires/search-by/vehicle/">Search by Vehicle</Link><br/>
-//          <Link to="/tires/search-by/size/">Search by Size</Link><br/>
-//          <Link to="/tires/search-by/brand/">Search by Brand</Link><br/>
-//        </div>
-//      </div>
-
-//      <Link to="/service/">Services</Link><br/>
-//         <div className="sub-menu">
-//           <Link to="/service/">All Services</Link><br/>
-//           <Link to="/service/alignment">Alignments</Link><br/>
-//           <Link to="/service/oil-change/">Oil Change</Link><br/>
-//           <Link to="/service/brakes/">Brakes</Link><br/>
-//           <Link to="/service/mufflers">Mufflers</Link><br/>
-//           <Link to="/service/rim/">Rim</Link><br/>
-//           <Link to="/service/suspention">Suspension</Link><br/>
-//           <Link to="/service/towing/">Towing Service</Link><br/>
-//         </div>
-
-//      <div className="menu-item">
-//        Specials
-//        <div className="sub-menu">
-//          <Link to="/specials/tire-specials/">Tire Specials</Link>
-//          <Link to="/specials/service-specials/">Service Specials</Link>
-//          <Link to="/financing/">Interest Free Financing</Link>
-//        </div>
-//      </div>
-
-//      <div className="menu-item">
-//        About
-//        <div className="sub-menu">
-//          <Link to="/contact-us/">Contact Us</Link>
-//        </div>
-//      </div>
-
-//    </div>
-// import { ShoppingCart, User2 } from 'lucide-react'
-// import React from 'react'
-// import { Link, useNavigate } from 'react-router-dom'
-
-// const Header = () => {
-//     const navigate = useNavigate();
-//     function toggleMobileMenuDisplay() {
-//         const mobileMenu = document.getElementById('mobile-nav');
-//         mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
-//       }
-
-//     return (
-//     <div>
-//           <div className="above-site-header">The Home of Wholesale Tire Pricing</div>
-//     <div className="site-header">
-//       <div className="site-header-logo-box">
-//         <a href="/">
-//           <img
-//             className="site-header-logo"
-//             src="https://tirealigners.com/public/images/logo/logo.png"
-//             style={{ transform: "translate(20px) scale(2.6)" ,position:'absolute' }}  // scale to zoom in (1.2 = 20% zoom)
-//             alt="Tires Etc"
-//           />
-//         </a>
-//       </div>
-//       <div className="site-header-nav " style={{marginLeft:"200px"}}>
-//         <div>
-//           <Link to="/">Tires</Link>
-//           <div className="site-header-sub-menu">
-//             <Link to="/search-by-vehicle/">Search by Vehicle</Link>
-//             <Link to="/search-by-size/">Search by Size</Link>
-//           </div>
-//         </div>
-
-//         <div>
-//           <Link to="/service/">Services</Link>
-//           <div className="site-header-sub-menu">
-//             <Link to="/service/">All Services</Link>
-//             <Link to="/service/alignment">Alignments</Link>
-//             <Link to="/service/oil-change/">Oil Change</Link>
-//             <Link to="/service/brakes/">Brakes</Link>
-//             <Link to="/service/mufflers">Mufflers</Link>
-//             <Link to="/service/rim/">Rim</Link>
-//             <Link to="/service/suspention">Suspention</Link>
-//             <Link to="/service/towing/">Towing Service</Link>
-//           </div>
-//         </div>
-//         <div>
-//         <Link to="/specials/">Specials</Link>
-//           <div className="site-header-sub-menu">
-//              <Link to="/specials/tire-specials/">Tire Specials</Link>
-//              <Link to="/specials/service-specials/">Service Specials</Link>
-//              <Link to="/specials/interest-fee/">Interest Free Financing</Link>
-//           </div>
-//         </div>
-//         <div>
-//         <Link to="/about-us">About</Link>
-//           <div className="site-header-sub-menu">
-//           <Link to="/about-us">Contact Us</Link>
-//           </div>
-//         </div>
-
-//       </div>
-//       <div className="site-header-right-container">
-//         <div className="site-header-right-column">
-//           <div className="site-header-right-row">
-//             <div>
-//               {/* <a href="/cart/" style={{color:'#F2184F'}}>Your Cart</a> */}
-//             </div>
-//             <div className="site-header-cart-icon">
-//               <a href="/cart/" style={{color:'white'}}>
-//                 <i className="fas fa-shopping-cart" />
-//               </a>
-//             </div>
-//           </div>
-//           <div className="site-header-account-block">
-//             <div className="site-header-right-row">
-//          <button onClick={() => navigate('/appointment')} style={{backgroundColor:'#F2184F' ,color:'white' , borderRadius:'5px' , padding:'10px 20px'}}>Get Appointments</button>
-//             </div>
-//             <div className="site-header-account-sub-panel">
-//               <p className="size-down">
-//                 <em>Not signed in</em>
-//               </p>
-//               <p>
-//                 <a href="/accounts/login/">Sign In</a> &nbsp;|&nbsp;{" "}
-//                 <a href="/accounts/signup/">Register</a>{" "}
-//               </p>
-//             </div>
-//           </div>
-//         </div>
-//         <div className="site-header-right-mobile">
-//   <div className="site-header-cart-icon">
-//     <a href="/cart/">
-//       <i className="fas fa-shopping-cart" />
-//     </a>
-//     <span className="header-cart-qty" id="header-cart-qty-mobile">0</span>
-//   </div>
-//   <button onClic>
-//     <i className="fas fa-bars" />
-//   </button>
-// </div>
-
-//         <div className="site-header-mobile-menu" id="mobile-nav">
-//           <a href="/accounts/login/">
-//             <div className="account-info">
-//               <div className="user-icon">
-//                 <i className="fas fa-user" />
-//               </div>
-//               <div className="user-info">
-//                 <p>Not logged in</p>
-//                 <p>Log In or Sign Up</p>
-//               </div>
-//             </div>
-//           </a>
-//           <div className="menu-item">
-//             Tires
-//             <div className="sub-menu">
-//               <a href="/tires/search-by/vehicle/">Search by Vehicle</a>
-//               <a href="/tires/search-by/size/">Search by Size</a>
-//               <a href="/tires/search-by/brand/">Search by Brand</a>
-//             </div>
-//           </div>
-//           <div className="menu-item">
-//             Inspection
-//             <div className="sub-menu">
-//               <a href="/services/pa-inspection-and-emissions-test/">
-//                 $44.99 PA Inspection
-//               </a>
-//               <a href="/services/pa-inspection-and-emissions-test/#faq">
-//                 Inspection &amp; Emissions FAQ
-//               </a>
-//             </div>
-//           </div>
-//           <div className="menu-item">
-//             Services
-//             <div className="sub-menu">
-//               <a href="/services/pa-inspection-and-emissions-test/">Inspection</a>
-//               <a href="/services/valvoline-oil-change/">Oil Change</a>
-//               <a href="/services/alignment/">Alignment</a>
-//               <a href="/services/brake-service/">Brakes</a>
-//               <a href="/services/heating-and-air-conditioning/">
-//                 Heating &amp; A/C
-//               </a>
-//               <a href="/services/check-engine-light/">Check Engine Light</a>
-//               <a href="/services/bring-your-own-parts/">Bring Your Own Parts</a>
-//               <a href="/services/">All Services</a>
-//             </div>
-//           </div>
-//           <div className="menu-item">
-//             Specials
-//             <div className="sub-menu">
-//               <a href="/specials/tire-specials/">Tire Specials</a>
-//               <a href="/specials/service-specials/">Service Specials</a>
-//               <a href="/financing/">Interest Free Financing</a>
-//             </div>
-//           </div>
-//           <div className="menu-item">
-//             About
-//             <div className="sub-menu">
-//               <a href="/contact-us/">Contact Us</a>
-//             </div>
-//           </div>
-//           <div className="menu-item">
-//             Locations
-//             <div className="sub-menu">
-//               <a href="/locations/clifton-heights/">Clifton Heights</a>
-//               <a href="/locations/montgomeryville/">Montgomeryville</a>
-//               <a href="/locations/west-chester/">West Chester</a>
-//               <a href="/locations/">View Map</a>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-
-//     </div>
-//   )
-// }
-
-// export default Header

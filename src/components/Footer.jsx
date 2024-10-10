@@ -3,123 +3,236 @@ import logo from "../assets/images/logo.png";
 
 const Footer = () => {
   return (
-    <div>
-      <div className="site-footer">
-        <div className="footer-content">
-          <div className="footer-row">
-            <div className="footer-col">
-              <h5>TIRES</h5>
-              <a href="/tires/search-by/vehicle/">Search by Vehicle</a>
-              <a href="/tires/search-by/size/">Search by Size</a>
-              <a href="/tires/search-by/brand/">Search by Brand</a>
-              <br />
-              <h5>TIRE BRANDS</h5>
-              <ul className="bare-list">
+    <>
+      {/* Inline CSS for consistent hover effects */}
+      <style>
+        {`
+          .footer-link, .social-icon {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+          }
+          .footer-link:hover, .social-icon:hover {
+            color: #f2184f; /* Accent color on hover */
+            transform: scale(1.1); /* Slight scale effect on hover */
+          }
+        `}
+      </style>
+
+      <footer
+        style={{ backgroundColor: "#202C45", color: "#fff", padding: "50px 0" }}
+      >
+        <div
+          style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}
+        >
+          {/* Logo & Intro Section */}
+          <div style={{ textAlign: "center", marginBottom: "40px" }}>
+            <a href="/" style={{ display: "block", marginBottom: "20px" }}>
+              <img
+                src={logo}
+                alt="Tire Aligners"
+                style={{ width: "100px", height: "100px" }}
+              />
+            </a>
+            <p
+              style={{
+                fontSize: "18px",
+                color: "#b0bec5",
+                maxWidth: "600px",
+                margin: "0 auto",
+              }}
+            >
+              At Tire Aligners, we are committed to providing excellent services
+              with integrity, passion, and professionalism. We strive to exceed
+              your expectations with every visit.
+            </p>
+          </div>
+
+          {/* Columns Section */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              textAlign: "left",
+              marginBottom: "40px",
+            }}
+          >
+            {/* Services Column */}
+            <div style={{ flex: "1", minWidth: "220px", marginBottom: "20px" }}>
+              <h4
+                style={{
+                  color: "rgb(242, 24, 79)",
+                  marginBottom: "20px",
+                  fontSize: "20px",
+                }}
+              >
+                Our Services
+              </h4>
+              <ul
+                style={{ listStyleType: "none", padding: 0, lineHeight: "2" }}
+              >
                 <li>
-                  <a href="/tires/brands/General/">General</a>
+                  <a href="/services/inspection" className="footer-link">
+                    Inspection
+                  </a>
                 </li>
                 <li>
-                  <a href="/tires/brands/Continental/">Continental</a>
+                  <a href="/services/oil-change" className="footer-link">
+                    Oil Change
+                  </a>
                 </li>
                 <li>
-                  <a href="/tires/brands/Goodyear/">Goodyear</a>
+                  <a href="/services/alignment" className="footer-link">
+                    Alignment
+                  </a>
                 </li>
                 <li>
-                  <a href="/tires/brands/Kelly/">Kelly</a>
+                  <a href="/services/brakes" className="footer-link">
+                    Brake Service
+                  </a>
                 </li>
                 <li>
-                  <a href="/tires/brands/Michelin/">Michelin</a>
-                </li>
-                <li>
-                  <a href="/tires/brands/Pirelli/">Pirelli</a>
-                </li>
-                <li>
-                  <a href="/tires/brands/Bridgestone/">Bridgestone</a>
-                </li>
-                <li>
-                  <a href="/tires/brands/Firestone/">Firestone</a>
-                </li>
-                <li>
-                  <a href="/tires/search-by/brand/">
-                    <strong>...AND MORE!</strong>
+                  <a href="/services/heating-ac" className="footer-link">
+                    Heating & A/C
                   </a>
                 </li>
               </ul>
             </div>
-            <div className="footer-col">
-              <h5>SERVICES</h5>
-              <a href="/services/pa-inspection-and-emissions-test/">
-                Inspection
-              </a>
-              <a href="/services/valvoline-oil-change/">Oil Change</a>
-              <a href="/services/alignment/">Alignment</a>
-              <a href="/services/brake-service/">Brakes</a>
-              <a href="/services/heating-and-air-conditioning/">
-                Heating &amp; A/C
-              </a>
-              <a href="/services/check-engine-light/">Check Engine Light</a>
-              <a href="/services/bring-your-own-parts/">Bring Your Own Parts</a>
-              <a href="/services/">...AND MORE!</a>
-              <br />
-              <h5>SPECIALS</h5>
-              <a href="/specials/tire-specials/">Tire Specials</a>
-              <a href="/specials/service-specials/">Service Specials</a>
-            </div>
-            <div className="footer-col"></div>
-          </div>
-          <div className="company-info-row">
-            <div className="location-row">
-              <div className="location-info">
-                <h6>Montgomeryville</h6>
-                <p className="address">616 Upper State Rd</p>
-                <p className="phone-number">215-361-3616</p>
-                <div className="loose-row margin-top-half">
-                  <a href="/locations/montgomeryville/">
-                    <i className="fas fa-info-circle" />
-                  </a>
-                  <a
-                    href="https://www.google.com/maps/place/Tires+Etc/@40.2358363,-75.2408391,17z/data=!3m1!4b1!4m5!3m4!1s0x89c6a40e8a4f1ebd:0xd1c0b8bd17b7f0b9!8m2!3d40.2359011!4d-75.2387625"
-                    target="_blank"
-                  >
-                    <i className="fas fa-map-marker-alt" />
-                  </a>
-                  <a href="tel:+12153613616">
-                    <i className="fas fa-phone-alt" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-              className="company-info"
-            >
-              <a
+
+            {/* Specials Column */}
+            <div style={{ flex: "1", minWidth: "220px", marginBottom: "20px" }}>
+              <h4
                 style={{
-                  marginRight: "20px",
+                  color: "rgb(242, 24, 79)",
+                  marginBottom: "20px",
+                  fontSize: "20px",
                 }}
-                href="/"
               >
-                <img
-                  style={{ width: "60px", height: "60px" }}
-                  src={logo}
-                  alt="Tire Aligners"
-                />
-              </a>
-              <div>
-                <p className="margin-top-half large-print">© 2024 Tires Etc</p>
-                <a href="/privacy-policy/">Privacy Policy</a> |{" "}
-                <a href="/terms-of-use/">Terms of Use</a>
-              </div>
+                Special Offers
+              </h4>
+              <ul
+                style={{ listStyleType: "none", padding: 0, lineHeight: "2" }}
+              >
+                <li>
+                  <a href="/specials/tire-specials" className="footer-link">
+                    Tire Specials
+                  </a>
+                </li>
+                <li>
+                  <a href="/specials/service-specials" className="footer-link">
+                    Service Specials
+                  </a>
+                </li>
+                <li>
+                  <a href="/specials" className="footer-link">
+                    Seasonal Discounts
+                  </a>
+                </li>
+                <li>
+                  <a href="/specials/coupons" className="footer-link">
+                    Coupons & Deals
+                  </a>
+                </li>
+              </ul>
             </div>
+
+            {/* Tire Brands Column */}
+            <div style={{ flex: "1", minWidth: "220px", marginBottom: "20px" }}>
+              <h4
+                style={{
+                  color: "rgb(242, 24, 79)",
+                  marginBottom: "20px",
+                  fontSize: "20px",
+                }}
+              >
+                Top Tire Brands
+              </h4>
+              <ul
+                style={{ listStyleType: "none", padding: 0, lineHeight: "2" }}
+              >
+                <li>
+                  <a href="/tires/general" className="footer-link">
+                    General
+                  </a>
+                </li>
+                <li>
+                  <a href="/tires/continental" className="footer-link">
+                    Continental
+                  </a>
+                </li>
+                <li>
+                  <a href="/tires/goodyear" className="footer-link">
+                    Goodyear
+                  </a>
+                </li>
+                <li>
+                  <a href="/tires/michelin" className="footer-link">
+                    Michelin
+                  </a>
+                </li>
+                <li>
+                  <a href="/tires/pirelli" className="footer-link">
+                    Pirelli
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Social Media and Copyright */}
+          <div
+            style={{
+              textAlign: "center",
+              borderTop: "1px solid #37474f",
+              paddingTop: "30px",
+            }}
+          >
+            <div style={{ marginBottom: "20px" }}>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
+                style={{ marginRight: "10px", fontSize: "24px" }}
+              >
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
+                style={{ marginRight: "10px", fontSize: "24px" }}
+              >
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
+                style={{ marginRight: "10px", fontSize: "24px" }}
+              >
+                <i className="fab fa-twitter"></i>
+              </a>
+            </div>
+            <p style={{ color: "#b0bec5", fontSize: "16px" }}>
+              © 2024 Tire Aligners. All Rights Reserved.
+            </p>
+            <p>
+              <a href="/privacy-policy/" className="footer-link">
+                Privacy Policy
+              </a>{" "}
+              |{" "}
+              <a href="/terms-of-use/" className="footer-link">
+                Terms of Use
+              </a>
+            </p>
           </div>
         </div>
-      </div>
-    </div>
+      </footer>
+    </>
   );
 };
 

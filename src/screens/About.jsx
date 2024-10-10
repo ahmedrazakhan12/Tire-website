@@ -2,178 +2,152 @@ import React from "react";
 
 const About = () => {
   return (
-    <>
-      <div className="main-content-wrapper">
-        <div className="main-content-med">
-          <h1>Contact Us</h1>
-          <p className="size-up">
-            Fill out the form below to send us a message and one of our staff
-            will get back to you as soon as possible.
+    <div
+      style={{
+        fontFamily: "Arial, sans-serif",
+        margin: "0 auto",
+        padding: "40px",
+        maxWidth: "900px",
+        textAlign: "center",
+      }}
+    >
+      <h1 style={{ color: "#2c3e50", fontSize: "48px", marginBottom: "20px" }}>
+        About Us
+      </h1>
+      <p
+        style={{
+          color: "#7f8c8d",
+          fontSize: "20px",
+          lineHeight: "1.8",
+          marginBottom: "40px",
+        }}
+      >
+        <i
+          className="fas fa-quote-left"
+          style={{ color: "#3498db", marginRight: "10px" }}
+        ></i>
+        We are a dynamic team driven by passion and innovation, committed to
+        delivering top-notch services that exceed expectations.
+        <i
+          className="fas fa-quote-right"
+          style={{ color: "#3498db", marginLeft: "10px" }}
+        ></i>
+      </p>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          marginBottom: "50px",
+        }}
+      >
+        <div style={{ textAlign: "center", width: "30%" }}>
+          <i
+            className="fas fa-bullseye"
+            style={{ fontSize: "48px", color: "#e74c3c", marginBottom: "10px" }}
+          ></i>
+          <h2 style={{ color: "#2c3e50", fontSize: "24px" }}>Our Mission</h2>
+          <p style={{ color: "#7f8c8d", fontSize: "18px", lineHeight: "1.6" }}>
+            To deliver world-class services while maintaining a focus on
+            customer satisfaction and innovation.
           </p>
-          <div className="contact-us-form-wrapper">
-            <form
-              className="simple-form labels-by-side submit-right"
-              method="post"
-            >
-              {" "}
-              <input
-                type="hidden"
-                name="csrfmiddlewaretoken"
-                defaultValue="IJ75zHHAxcV81AW5sDy94bHhnLJSkPyxePpZ6yryGyVCjLRxnJcgykjXFkcXtdpx"
-              />{" "}
-              <div id="div_id_name" className="control-group">
-                {" "}
-                <label
-                  htmlFor="id_name"
-                  className="control-label requiredField"
-                >
-                  Name<span className="asteriskField">*</span>{" "}
-                </label>{" "}
-                <div className="controls">
-                  {" "}
-                  <input
-                    type="text"
-                    name="name"
-                    maxLength={50}
-                    className="textinput textInput"
-                    required=""
-                    id="id_name"
-                  />{" "}
-                </div>{" "}
-              </div>{" "}
-              <div id="div_id_email" className="control-group">
-                {" "}
-                <label
-                  htmlFor="id_email"
-                  className="control-label requiredField"
-                >
-                  Email<span className="asteriskField">*</span>{" "}
-                </label>{" "}
-                <div className="controls">
-                  {" "}
-                  <input
-                    type="email"
-                    name="email"
-                    maxLength={254}
-                    className="emailinput"
-                    required=""
-                    id="id_email"
-                  />{" "}
-                </div>{" "}
-              </div>{" "}
-              <div id="div_id_phone_number" className="control-group">
-                {" "}
-                <label htmlFor="id_phone_number" className="control-label ">
-                  Phone Number
-                </label>{" "}
-                <div className="controls">
-                  {" "}
-                  <input
-                    type="text"
-                    name="phone_number"
-                    maxLength={30}
-                    className="textinput textInput"
-                    id="id_phone_number"
-                  />{" "}
-                </div>{" "}
-              </div>{" "}
-              <div id="div_id_contact_method" className="control-group">
-                {" "}
-                <label
-                  htmlFor="id_contact_method_0"
-                  className="control-label requiredField"
-                >
-                  Preferred Contact Method
-                  <span className="asteriskField">*</span>{" "}
-                </label>{" "}
-                <div className="controls">
-                  {" "}
-                  <label htmlFor="id_contact_method_0" className="radio">
-                    {" "}
-                    <input
-                      type="radio"
-                      defaultChecked=""
-                      name="contact_method"
-                      id="id_contact_method_0"
-                      defaultValue={1}
-                    />
-                    Email
-                  </label>{" "}
-                  <label htmlFor="id_contact_method_1" className="radio">
-                    {" "}
-                    <input
-                      type="radio"
-                      name="contact_method"
-                      id="id_contact_method_1"
-                      defaultValue={2}
-                    />
-                    Phone
-                  </label>{" "}
-                </div>{" "}
-              </div>{" "}
-              <div id="div_id_store_location" className="control-group">
-                {" "}
-                <label htmlFor="id_store_location" className="control-label ">
-                  Store Location
-                </label>{" "}
-                <div className="controls">
-                  {" "}
-                  <select
-                    name="store_location"
-                    className="select"
-                    id="id_store_location"
-                  >
-                    {" "}
-                    <option value="" selected="">
-                      ---------
-                    </option>{" "}
-                    <option value={1}>Montgomeryville</option>{" "}
-                    <option value={2}>Clifton Heights</option>{" "}
-                    <option value={3}>West Chester</option>
-                  </select>{" "}
-                  <p id="hint_id_store_location" className="help-block">
-                    The store location most relevant to your inquiry. Optional,
-                    but may help expedite your response.
-                  </p>{" "}
-                </div>{" "}
-              </div>{" "}
-              <div id="div_id_message" className="control-group">
-                {" "}
-                <label
-                  htmlFor="id_message"
-                  className="control-label requiredField"
-                >
-                  Message<span className="asteriskField">*</span>{" "}
-                </label>{" "}
-                <div className="controls">
-                  {" "}
-                  <textarea
-                    name="message"
-                    cols={40}
-                    rows={10}
-                    className="textarea"
-                    required=""
-                    id="id_message"
-                    defaultValue={""}
-                  />{" "}
-                </div>{" "}
-              </div>{" "}
-              <div className="form-actions">
-                {" "}
-                <input
-                  style={{ backgroundColor: "#f2184f", color: "white" }}
-                  type="button"
-                  // name="submit"
-                  defaultValue="Send Message"
-                  className="btn btn"
-                  // id="submit-id-submit"
-                />{" "}
-              </div>{" "}
-            </form>
-          </div>
+        </div>
+
+        <div style={{ textAlign: "center", width: "30%" }}>
+          <i
+            className="fas fa-eye"
+            style={{ fontSize: "48px", color: "#2980b9", marginBottom: "10px" }}
+          ></i>
+          <h2 style={{ color: "#2c3e50", fontSize: "24px" }}>Our Vision</h2>
+          <p style={{ color: "#7f8c8d", fontSize: "18px", lineHeight: "1.6" }}>
+            To lead the industry by fostering a culture of innovation and
+            excellence, while impacting communities worldwide.
+          </p>
+        </div>
+
+        <div style={{ textAlign: "center", width: "30%" }}>
+          <i
+            className="fas fa-users"
+            style={{ fontSize: "48px", color: "#27ae60", marginBottom: "10px" }}
+          ></i>
+          <h2 style={{ color: "#2c3e50", fontSize: "24px" }}>Our Team</h2>
+          <p style={{ color: "#7f8c8d", fontSize: "18px", lineHeight: "1.6" }}>
+            A dedicated group of professionals working together to drive success
+            through creativity and collaboration.
+          </p>
         </div>
       </div>
-    </>
+
+      <h2
+        style={{
+          color: "#2c3e50",
+          fontSize: "32px",
+          marginTop: "40px",
+          marginBottom: "20px",
+        }}
+      >
+        Our Core Values
+      </h2>
+      <ul
+        style={{
+          listStyleType: "none",
+          padding: 0,
+          fontSize: "18px",
+          color: "#7f8c8d",
+          lineHeight: "1.8",
+        }}
+      >
+        <li style={{ marginBottom: "10px" }}>
+          <i
+            className="fas fa-check-circle"
+            style={{ color: "#2ecc71", marginRight: "10px" }}
+          ></i>
+          Integrity
+        </li>
+        <li style={{ marginBottom: "10px" }}>
+          <i
+            className="fas fa-check-circle"
+            style={{ color: "#2ecc71", marginRight: "10px" }}
+          ></i>
+          Innovation
+        </li>
+        <li style={{ marginBottom: "10px" }}>
+          <i
+            className="fas fa-check-circle"
+            style={{ color: "#2ecc71", marginRight: "10px" }}
+          ></i>
+          Customer Focus
+        </li>
+        <li style={{ marginBottom: "10px" }}>
+          <i
+            className="fas fa-check-circle"
+            style={{ color: "#2ecc71", marginRight: "10px" }}
+          ></i>
+          Teamwork
+        </li>
+        <li style={{ marginBottom: "10px" }}>
+          <i
+            className="fas fa-check-circle"
+            style={{ color: "#2ecc71", marginRight: "10px" }}
+          ></i>
+          Excellence
+        </li>
+      </ul>
+
+      <div style={{ marginTop: "50px", fontSize: "24px" }}>
+        <i
+          className="fas fa-phone-alt"
+          style={{ color: "#2980b9", marginRight: "10px" }}
+        ></i>
+        Contact us at:{" "}
+        <a
+          href="mailto:info@company.com"
+          style={{ color: "#2980b9", textDecoration: "none" }}
+        >
+          info@company.com
+        </a>
+      </div>
+    </div>
   );
 };
 
