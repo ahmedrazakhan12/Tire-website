@@ -308,8 +308,34 @@ const Home = () => {
                     <option value="" disabled>
                       Make
                     </option>
-                    <option value="custom1">custom</option>
-                    <option value="custom2">custom 2</option>
+                    <option value="Alfa Romeo">Alfa Romeo</option>
+                    <option value="American Motors">American Motors</option>
+                    <option value="Audi">Audi</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Buick">Buick</option>
+                    <option value="Cadillac">Cadillac</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Chrysler">Chrysler</option>
+                    <option value="Dodge">Dodge</option>
+                    <option value="Eagle">Eagle</option>
+                    <option value="Fiat">Fiat</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Geo">Geo</option>
+                    <option value="GMC">GMC</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Aston Martin">Aston Martin</option>
+                    <option value="Bentley">Bentley</option>
+                    <option value="Checker">Checker</option>
+                    <option value="Ferrari">Ferrari</option>
+                    <option value="International">International</option>
+                    <option value="Jaguar">Jaguar</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Lamborghini">Lamborghini</option>
+                    <option value="Land Rover">Land Rover</option>
+                    <option value="Lexus">Lexus</option>
+                    <option value="Lincoln">Lincoln</option>
+                    <option value="Lotus">Lotus</option>
+                    <option value="Maserati">Maserati</option>
                   </select>
 
                   <select
