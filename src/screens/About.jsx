@@ -1,6 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const About = () => {
+  const [aboutData, setAboutData] = useState(null); // State to store API data
+  const [loading, setLoading] = useState(true); // State for loading indicator
+  const [error, setError] = useState(null); // State for error handling
+
+  // Fetch About data from API
+  useEffect(() => {
+    const fetchAboutData = async () => {
+      try {
+        const response = await axios.get(
+          "https://tirealigners.com/admin/api/about"
+        );
+        setAboutData(response.data); // Set the fetched data into state
+        setLoading(false); // Turn off loading once data is fetched
+      } catch (error) {
+        console.error("Error fetching about data:", error);
+        setError("Failed to load about information."); // Handle error
+        setLoading(false);
+      }
+    };
+
+    fetchAboutData();
+  }, []); // Empty dependency array ensures this runs only on mount
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+
   return (
     <div
       style={{
@@ -12,7 +39,7 @@ const About = () => {
       }}
     >
       <h1 style={{ color: "#2c3e50", fontSize: "48px", marginBottom: "20px" }}>
-        About Us
+        {aboutData.title}
       </h1>
       <p
         style={{
@@ -26,8 +53,7 @@ const About = () => {
           className="fas fa-quote-left"
           style={{ color: "#3498db", marginRight: "10px" }}
         ></i>
-        We are a dynamic team driven by passion and innovation, committed to
-        delivering top-notch services that exceed expectations.
+        {aboutData.description}
         <i
           className="fas fa-quote-right"
           style={{ color: "#3498db", marginLeft: "10px" }}
@@ -46,10 +72,11 @@ const About = () => {
             className="fas fa-bullseye"
             style={{ fontSize: "48px", color: "#e74c3c", marginBottom: "10px" }}
           ></i>
-          <h2 style={{ color: "#2c3e50", fontSize: "24px" }}>Our Mission</h2>
+          <h2 style={{ color: "#2c3e50", fontSize: "24px" }}>
+            {aboutData.our_mission}
+          </h2>
           <p style={{ color: "#7f8c8d", fontSize: "18px", lineHeight: "1.6" }}>
-            To deliver world-class services while maintaining a focus on
-            customer satisfaction and innovation.
+            {aboutData.our_mission_description}
           </p>
         </div>
 
@@ -58,10 +85,11 @@ const About = () => {
             className="fas fa-eye"
             style={{ fontSize: "48px", color: "#2980b9", marginBottom: "10px" }}
           ></i>
-          <h2 style={{ color: "#2c3e50", fontSize: "24px" }}>Our Vision</h2>
+          <h2 style={{ color: "#2c3e50", fontSize: "24px" }}>
+            {aboutData.our_vision}
+          </h2>
           <p style={{ color: "#7f8c8d", fontSize: "18px", lineHeight: "1.6" }}>
-            To lead the industry by fostering a culture of innovation and
-            excellence, while impacting communities worldwide.
+            {aboutData.our_vision_description}
           </p>
         </div>
 
@@ -70,10 +98,11 @@ const About = () => {
             className="fas fa-users"
             style={{ fontSize: "48px", color: "#27ae60", marginBottom: "10px" }}
           ></i>
-          <h2 style={{ color: "#2c3e50", fontSize: "24px" }}>Our Team</h2>
+          <h2 style={{ color: "#2c3e50", fontSize: "24px" }}>
+            {aboutData.our_team}
+          </h2>
           <p style={{ color: "#7f8c8d", fontSize: "18px", lineHeight: "1.6" }}>
-            A dedicated group of professionals working together to drive success
-            through creativity and collaboration.
+            {aboutData.our_team_description}
           </p>
         </div>
       </div>
@@ -86,7 +115,7 @@ const About = () => {
           marginBottom: "20px",
         }}
       >
-        Our Core Values
+        {aboutData.our_core_values}
       </h2>
       <ul
         style={{
@@ -102,35 +131,35 @@ const About = () => {
             className="fas fa-check-circle"
             style={{ color: "#2ecc71", marginRight: "10px" }}
           ></i>
-          Integrity
+          {aboutData.integrity}
         </li>
         <li style={{ marginBottom: "10px" }}>
           <i
             className="fas fa-check-circle"
             style={{ color: "#2ecc71", marginRight: "10px" }}
           ></i>
-          Innovation
+          {aboutData.innovation}
         </li>
         <li style={{ marginBottom: "10px" }}>
           <i
             className="fas fa-check-circle"
             style={{ color: "#2ecc71", marginRight: "10px" }}
           ></i>
-          Customer Focus
+          {aboutData.custom}
         </li>
         <li style={{ marginBottom: "10px" }}>
           <i
             className="fas fa-check-circle"
             style={{ color: "#2ecc71", marginRight: "10px" }}
           ></i>
-          Teamwork
+          {aboutData.teamwork}
         </li>
         <li style={{ marginBottom: "10px" }}>
           <i
             className="fas fa-check-circle"
             style={{ color: "#2ecc71", marginRight: "10px" }}
           ></i>
-          Excellence
+          {aboutData.excellence}
         </li>
       </ul>
 
@@ -141,10 +170,10 @@ const About = () => {
         ></i>
         Contact us at:{" "}
         <a
-          href="mailto:info@company.com"
+          href={`mailto:${aboutData.contact}`}
           style={{ color: "#2980b9", textDecoration: "none" }}
         >
-          info@company.com
+          {aboutData.contact}
         </a>
       </div>
     </div>

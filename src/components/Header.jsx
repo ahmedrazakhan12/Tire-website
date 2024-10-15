@@ -1,12 +1,14 @@
 import { BarChart, ShoppingCart } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/images/logo.png";
+import axios from "axios"; // Import Axios
 
 const Header = () => {
   const navigate = useNavigate();
   const [mobileDisplay, setMobileDisplay] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null); // For handling open dropdowns in mobile
+  const [services, setServices] = useState([]); // State to store services
 
   function toggleMobileMenuDisplay() {
     setMobileDisplay(!mobileDisplay);
@@ -24,6 +26,22 @@ const Header = () => {
     }
   }
 
+  useEffect(() => {
+    // Fetch services from the API
+    const fetchServices = async () => {
+      try {
+        const response = await axios.get(
+          "https://tirealigners.com/admin/api/services"
+        );
+        setServices(response.data); // Update services state with API response
+      } catch (error) {
+        console.error("Error fetching services:", error); // Handle error
+      }
+    };
+
+    fetchServices();
+  }, []); // Empty dependency array to run effect only once on mount
+
   return (
     <div>
       <div className="above-site-header">
@@ -32,19 +50,10 @@ const Header = () => {
       <div className="site-header">
         <div className="site-header-logo-box">
           <Link to="/">
-            <img
-              className="site-header-logo"
-              src={logo}
-              alt="Tires Etc"
-              style={{
-                transform: "translate(20px) scale(2.6)",
-                position: "absolute",
-              }} // Scale to zoom in
-            />
+            <img className="site-header-logo" src={logo} alt="Tires Etc" />
           </Link>
         </div>
-
-        <div className="site-header-nav" style={{ marginLeft: "200px" }}>
+        <div className="site-header-nav">
           <div>
             <Link to="/">Tires</Link>
             <div className="site-header-sub-menu">
@@ -52,18 +61,15 @@ const Header = () => {
               <Link to="/search-by-size/">Search by Size</Link>
             </div>
           </div>
-
           <div>
             <Link to="/service/">Services</Link>
             <div className="site-header-sub-menu">
               <Link to="/service/">All Services</Link>
-              <Link to="/service/alignment">Alignments</Link>
-              <Link to="/service/oil-change/">Oil Change</Link>
-              <Link to="/service/brakes/">Brakes</Link>
-              <Link to="/service/mufflers">Mufflers</Link>
-              <Link to="/service/rim/">Rim</Link>
-              <Link to="/service/suspention">Suspension</Link>
-              <Link to="/service/towing/">Towing Service</Link>
+              {services.map((service) => (
+                <Link key={service.id} to={`/services/${service.id}`}>
+                  {service.title}
+                </Link>
+              ))}
             </div>
           </div>
 
@@ -75,7 +81,12 @@ const Header = () => {
               <Link to="/specials/interest-fee">Interest Free Financing</Link>
             </div>
           </div>
-
+          <div>
+            <Link to="/faqs">FAQs</Link>
+          </div>
+          <div>
+            <Link to="/testimonials">Testimonials</Link>
+          </div>
           <div>
             <Link to="/about-us">About</Link>
           </div>
@@ -88,7 +99,6 @@ const Header = () => {
           <div className="site-header-right-column">
             <div className="site-header-right-row">
               <div className="site-header-cart-icon"></div>
-             
             </div>
             <div className="site-header-account-block">
               <div className="site-header-right-row">
@@ -104,7 +114,10 @@ const Header = () => {
                   Get Appointments
                 </button>
               </div>
-              <div className="site-header-account-sub-panel">
+
+              {/* if asked about the login and signup then will provide please */}
+
+              {/* <div className="site-header-account-sub-panel">
                 <p className="size-down">
                   <em>Not signed in</em>
                 </p>
@@ -112,20 +125,15 @@ const Header = () => {
                   <Link to="/login">Sign In</Link> &nbsp;|&nbsp;
                   <Link to="/create-account">Register</Link>
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
 
-            <div className="d-flex" style={{display:"flex"}}>
-            <div className="site-header-right-mobile">
+          <div className="site-header-right-mobile">
             <button onClick={toggleMobileMenuDisplay}>
               <BarChart color="red" />
             </button>
-            
-             </div>
-          <div>
           </div>
-            </div>
         </div>
       </div>
 
@@ -162,41 +170,16 @@ const Header = () => {
                           All Services
                         </Link>
                       </li>
-                      <li>
-                        <Link to="/service/alignment" onClick={closeSidebar}>
-                          Alignments
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/service/oil-change/" onClick={closeSidebar}>
-                          Oil Change
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/service/brakes/" onClick={closeSidebar}>
-                          Brakes
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/service/mufflers" onClick={closeSidebar}>
-                          Mufflers
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/service/rim/" onClick={closeSidebar}>
-                          Rim
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/service/suspention" onClick={closeSidebar}>
-                          Suspension
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/service/towing/" onClick={closeSidebar}>
-                          Towing Service
-                        </Link>
-                      </li>
+                      {services.map((service) => (
+                        <li key={service.id}>
+                          <Link
+                            to={`/services/${service.id}`}
+                            onClick={closeSidebar}
+                          >
+                            {service.title}
+                          </Link>
+                        </li>
+                      ))}
                     </ul>
                   )}
                 </li>

@@ -23,7 +23,7 @@ const ContactUS = () => {
     console.log(formData);
     try {
       const response = await axios.post(
-        "http://localhost/admin/api/contact",
+        "https://tirealigners.com/admin/api/contact",
         formData,
         {
           headers: {

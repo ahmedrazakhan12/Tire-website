@@ -46,9 +46,10 @@
   margin-bottom: 20px !important;
   text-align: center !important;
 }
- 
+
 .progress-bar {
-  background-color: red !important;  /* Red progress bar (loader) */
+  background-color: red !important;
+  /* Red progress bar (loader) */
 }
 
 .nav-tabs {
@@ -109,13 +110,13 @@
 }
 
 .home-hero {
-  position: relative;
+  position: relative !important;
   z-index: 999;
   /* height: 95vh; Adjust as needed */
   /* display: flex; */
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: hidden !important;
   /* Ensure video fills the container */
 }
 
@@ -127,8 +128,9 @@
   min-height: 100%;
   z-index: -1;
   /* Send video behind other content */
-  object-fit: cover;
+  object-fit: cover !important;
   /* Ensures the video covers the entire area */
+  object-position: center !important;
 }
 
 .home-hero::before {
@@ -147,6 +149,11 @@
 .overlay-theme-colored-custom {
   background-color: #202c45 !important;
 
+}
+
+.app-container {
+  position: relative;
+  overflow: hidden;
 }
 
 .carousel-custom-image {
@@ -671,8 +678,8 @@ time {
   top: 0;
   left: -250px;
   z-index: 9999;
-  background: #202c45;
-  color: #fff !important;
+  background: #fff;
+  color: #000 !important;
   transition: all 0.3s;
 }
 
@@ -791,7 +798,7 @@ h1 {
   color: #777;
 }
 
-.product-price, 
+.product-price,
 .product-line-price {
   text-align: center;
   width: 100px;

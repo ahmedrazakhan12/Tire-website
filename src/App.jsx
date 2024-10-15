@@ -22,21 +22,19 @@ import ContactUS from "./screens/ContactUs";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Catalog from "./screens/Catalog";
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import ViewCart from "./screens/ViewCart";
 import { useEffect, useState } from "react";
-
-
-
+import SingleService from "./screens/service/SingleService";
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
 
   const fetchCartCountData = () => {
-    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || []; // Fetch from localStorage
-    setCartCount(cartItems.length); 
-  }
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || []; // Fetch from localStorage
+    setCartCount(cartItems.length);
+  };
   const [cartItems, setCartItems] = useState([]);
   const removeFromCart = (index) => {
     const updatedCartItems = [...cartItems];
@@ -46,100 +44,113 @@ function App() {
       updatedCartItems.splice(index, 1); // Remove one item at the found index
     }
 
-    
-    
     console.log("updatedCartItems", updatedCartItems);
-    
+
     // Update state and local storage
     setCartItems(updatedCartItems);
-    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems)); // Update local storage
-    fetchCartCountData()
+    localStorage.setItem("cartItems", JSON.stringify(updatedCartItems)); // Update local storage
+    fetchCartCountData();
   };
-  const addToCart = (tire) => { 
+  const addToCart = (tire) => {
     // Get existing cart items from local storage (if any)
-    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     cartItems.push(tire);
-    fetchCartCountData()
-    
+    fetchCartCountData();
+
     // Add the new tire to the cart
-    
+
     // Update the local storage with the new cart items array
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
     // Show success toast with red icon
     toast.success("Addeds to Cart", {
-        icon: <ShoppingCart />,  // Custom icon
-        style: {
-          borderRadius: '8px',
-          color: '#F2184F',  // Custom text color
-        },
-      });
-      
+      icon: <ShoppingCart />, // Custom icon
+      style: {
+        borderRadius: "8px",
+        color: "#F2184F", // Custom text color
+      },
+    });
+
     // Optional: Log to check if the item was added successfully
     console.log("Cart items updated:", cartItems);
   };
- 
- 
-  
+
   // UseEffect to fetch cartItems from localStorage on component mount
   useEffect(() => {
-    fetchCartCountData()
-  }, [location.pathname]); 
-
+    fetchCartCountData();
+  }, [location.pathname]);
 
   return (
-    <>
- <div className="p-absolute" style={{ padding: "30px", position: "fixed", zIndex: "999999", right: "0", bottom: "0" }}>
-  <a href="/view-cart"  style={{ background: "#F2184F", borderRadius: "50%", cursor: "pointer", padding: "11px", position: "relative" }} className="shadow">
-    <ShoppingCart style={{ color: "#fff" }} />
-    <span style={{
-      position: 'absolute',
-      top: '-8px',
-      right: '-8px',
-      backgroundColor: 'rgb(32 44 69)', // Badge color
-      borderRadius: '50%',
-      padding: '4px 8px',
-      color: 'white',
-      fontSize: '12px',
-      fontWeight: 'bold'
-    }}>
-      {cartCount} {/* Replace 3 with dynamic value */}
-    </span>
-  </a>
-</div>
+    <div className="app-container">
+      <div
+        className="p-absolute"
+        style={{
+          padding: "30px",
+          position: "fixed",
+          zIndex: "999999",
+          right: "0",
+          bottom: "0",
+        }}
+      >
+        <a
+          href="/view-cart"
+          style={{
+            background: "#F2184F",
+            borderRadius: "50%",
+            cursor: "pointer",
+            padding: "11px",
+            position: "relative",
+          }}
+          className="shadow"
+        >
+          <ShoppingCart style={{ color: "#fff" }} />
+          <span
+            style={{
+              position: "absolute",
+              top: "-8px",
+              right: "-8px",
+              backgroundColor: "rgb(32 44 69)",
+              borderRadius: "50%",
+              padding: "4px 8px",
+              color: "white",
+              fontSize: "12px",
+              fontWeight: "bold",
+            }}
+          >
+            {cartCount}
+          </span>
+        </a>
+      </div>
 
-
-
-<ToastContainer
-  position="top-right"
-  autoClose={5000}
-  hideProgressBar={false}
-  newestOnTop={false}
-  closeOnClick
-  rtl={false}
-  pauseOnFocusLoss
-  draggable
-  pauseOnHover
-  toastStyle={{
-    fontFamily: "JosefinSans",
-  }}
-  progressClassName="progress-bar"
-  toastClassName="custom-toast"
-  icon={'🛒'}
-/>
-
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        toastStyle={{
+          fontFamily: "JosefinSans",
+        }}
+        progressClassName="progress-bar"
+        toastClassName="custom-toast"
+        icon={"🛒"}
+      />
 
       <Router>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/service" element={<AllService />} />
-          <Route path="/service/oil-change" element={<OilChange />} />
-          <Route path="/service/alignment" element={<Alignment />} />
+          <Route path="/services/:id" element={<SingleService />} />
+          {/* <Route path="/service/alignment" element={<Alignment />} />
           <Route path="/service/brakes" element={<Brakes />} />
           <Route path="/service/mufflers" element={<Mufflers />} />
           <Route path="/service/rim" element={<Rim />} />
           <Route path="/service/suspention" element={<Suspention />} />
-          <Route path="/service/towing" element={<Towing />} />
+          <Route path="/service/towing" element={<Towing />} /> */}
           <Route path="/specials" element={<TireSpecial />} />
           <Route path="/specials/tire-specials" element={<TireSpecial />} />
           <Route
@@ -147,7 +158,6 @@ function App() {
             element={<ServiceSpecial />}
           />
 
-          
           <Route path="/specials/interest-fee" element={<IntrestFee />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/contact-us" element={<ContactUS />} />
@@ -158,33 +168,38 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route
             path="/tires/catalog"
-            element={<Catalog addToCart={addToCart}/>}
+            element={<Catalog addToCart={addToCart} />}
           />
-  <Route
+          <Route
             path="/view-cart"
-            element={<ViewCart cartItems={cartItems} setCartItems={setCartItems} removeFromCart={removeFromCart}/>}
+            element={
+              <ViewCart
+                cartItems={cartItems}
+                setCartItems={setCartItems}
+                removeFromCart={removeFromCart}
+              />
+            }
           />
-
 
           <Route
             path="*"
             element={
               <>
-                <section class="page_404">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-sm-12 ">
-                        <div class="col-sm-10 col-sm-offset-1  text-center">
-                          <div class="four_zero_four_bg">
-                            <h1 class="text-center ">404</h1>
+                <section className="page_404">
+                  <div className="container">
+                    <div className="row">
+                      <div className="col-sm-12 ">
+                        <div className="col-sm-10 col-sm-offset-1  text-center">
+                          <div className="four_zero_four_bg">
+                            <h1 className="text-center ">404</h1>
                           </div>
 
-                          <div class="contant_box_404">
-                            <h3 class="h2">Look like you're lost</h3>
+                          <div className="contant_box_404">
+                            <h3 className="h2">Look like you're lost</h3>
 
                             <p>the page you are looking for not avaible!</p>
 
-                            <a href="" class="link_404">
+                            <a href="" className="link_404">
                               Go to Home
                             </a>
                           </div>
@@ -199,30 +214,22 @@ function App() {
           {/* <Route path="/contact" element={<Contact />} /> */}
         </Routes>
         <Footer />
-        <div
+        {/* <div
           className="  "
           style={{
             color: "rgb(32 44 69)",
             background: "rgb(32 44 69)",
             userSelect: "none",
+            visibility: "hidden",
           }}
         >
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
           magni perferendis modi quam ipsa! A eaque consequatur iusto. Enim
           cupiditate quasi vero provident ipsum ipsam iste fugiat blanditiis.
-          Commodi sapiente non neque enim! Cupiditate pariatur officia maiores
-          vero, neque molestias beatae nulla voluptatibus nam, deleniti autem
-          iusto, rerum distinctio maxime vel dicta ducimus. Beatae recusandae
-          ipsam cupiditate corrupti nihil voluptatibus id tempora, officia ab ex
-          molestiae magnam autem nesciunt temporibus vero quasi impedit a. Culpa
-          possimus voluptatem sit nam dolor ipsa, sequi repudiandae? Repudiandae
-          corrupti dolorem, rem perferendis doloribus error minus quae inventore
-          libero, fugiat provident magnam modi earum. Adipisci.
-        </div>
+          Commodi sapiente non neque enim! Cupiditate
+        </div> */}
 
-      
-
-        <div
+        {/* <div
           className="text-center p-3 text-white"
           style={{ backgroundColor: "rgb(242, 24, 79)" }}
         >
@@ -230,9 +237,9 @@ function App() {
           <a className="text-white" href="https://tirealigners.com">
             Tire Alligners
           </a>
-        </div>
+        </div> */}
       </Router>
-    </>
+    </div>
   );
 }
 

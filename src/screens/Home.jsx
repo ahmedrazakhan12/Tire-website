@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BankCard from "../assets/images/bank-card.png";
 import BankCard2 from "../assets/images/bank-card2.png";
 import SnapCard from "../assets/images/snap-logo.png";
@@ -14,38 +14,87 @@ import TaxiImage from "../assets/images/taxi-icon.png";
 import TodayImage from "../assets/images/today.png";
 import Carousel from "react-bootstrap/Carousel";
 import V4 from "../assets/v4.mp4";
-import Mufflers from "../assets/images/mufflers.png";
-import Rim from "../assets/images/rim.jpeg";
-import Towing from "../assets/images/tow-car.png";
+import location from "../assets/images/imj9.jpg";
 
 import "../App.css";
 import { toast } from "react-toastify";
+import axios from "axios";
 const Home = () => {
   const [tabs, setTabs] = useState("vehicle");
 
+  // State variables to hold the selected values
+  const [year, setYear] = useState("");
+  const [make, setMake] = useState("");
+  const [model, setModel] = useState("");
+  const [trim, setTrim] = useState("");
 
-    // State variables to hold the selected values
-    const [year, setYear] = useState('');
-    const [make, setMake] = useState('');
-    const [model, setModel] = useState('');
-    const [trim, setTrim] = useState('');
-  
-    // Handler for form submission
-    const handleSubmit = (event) => {
-      event.preventDefault(); // Prevent default form submission
-  
-      // Check if all selects have valid values
-      if (year && make && model && trim) {
-        // If all fields are selected, navigate to the desired URL
-        window.location.href = '/tires/catalog';
-      } else {
-        // Optionally, alert the user or display a message
-        toast.error('Please select all options before proceeding.');
-        // alert('Please select all options before proceeding.');
+  // State to hold model data fetched from the API
+  const [models, setModels] = useState([]);
+  const [years, setYears] = useState([]);
+  const [services, setServices] = useState([]); // State to store services
+
+  // Fetch services from the API when component mounts
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const response = await axios.get(
+          "https://tirealigners.com/admin/api/services"
+        );
+        console.log(response);
+        setServices(response.data); // Store API response in state
+      } catch (error) {
+        console.error("Error fetching services:", error);
       }
     };
 
-    
+    fetchServices();
+  }, []); // Empty dependency array to run effect only on mount
+
+  // Fetch models from API
+  useEffect(() => {
+    const fetchModels = async () => {
+      try {
+        const response = await axios.get(
+          "https://tirealigners.com/admin/api/models"
+        );
+        setModels(response.data); // Update state with model data
+      } catch (error) {
+        console.error("Error fetching models:", error);
+        toast.error("Failed to load models.");
+      }
+    };
+
+    const fetchYears = async () => {
+      try {
+        const response = await axios.get(
+          "https://tirealigners.com/admin/api/years"
+        );
+        console.log("response", response);
+        setYears(response.data);
+      } catch (error) {
+        console.error("Error fetching years:", error);
+        toast.error("Failed to load years.");
+      }
+    };
+
+    fetchModels();
+    fetchYears();
+  }, []);
+
+  // Handler for form submission
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent default form submission
+
+    // Check if all selects have valid values
+    if (year && make && model && trim) {
+      // If all fields are selected, navigate to the desired URL
+      window.location.href = "/tires/catalog";
+    } else {
+      // Optionally, alert the user or display a message
+      toast.error("Please select all options before proceeding.");
+      // alert('Please select all options before proceeding.');
+    }
+  };
 
   return (
     <>
@@ -195,8 +244,8 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div class="form-container">
-              <div class="form-title">SHOP TIRES</div>
+            <div className="form-container">
+              <div className="form-title">SHOP TIRES</div>
               <ul
                 className="nav nav-tabs mb-3 w-100"
                 style={{ fontSize: "20px" }}
@@ -233,71 +282,77 @@ const Home = () => {
                 </li>
               </ul>
               {tabs === "vehicle" && (
-                 <form onSubmit={handleSubmit}>
-                 <select className="form-select" aria-label="Year" value={year} onChange={(e) => setYear(e.target.value)} >
-                   <option value="" disabled>
-                     Year
-                   </option>
-                   {[...Array(2025 - 1980).keys()].map((_, index) => (
-                     <option key={index} value={2023 - index}>
-                       {2023 - index}
-                     </option>
-                   ))}
-                 </select>
-           
-                 <select className="form-select" aria-label="Make" value={make} onChange={(e) => setMake(e.target.value)} >
-                   <option value="" disabled>
-                     Make
-                   </option>
-                   <option value="custom1" >
-                     custom
-                   </option>
-                   <option value="custom2" >
-                   custom 2
+                <form onSubmit={handleSubmit}>
+                  <select
+                    className="form-select"
+                    aria-label="Year"
+                    value={year}
+                    onChange={(e) => setYear(e.target.value)}
+                  >
+                    <option value="" disabled>
+                      Year
+                    </option>
+                    {[...Array(2025 - 1980).keys()].map((_, index) => (
+                      <option key={index} value={2025 - index}>
+                        {2025 - index}
+                      </option>
+                    ))}
+                  </select>
 
-                   </option>
-                   {/* Add options for makes here */}
-                 </select>
-           
-                 <select className="form-select" aria-label="Model" value={model} onChange={(e) => setModel(e.target.value)} >
-                   <option value="" disabled>
-                     Model
-                   </option>
-                   <option value="model1">
-                     Model
-                   </option>
-                   <option value="model2">
-                     Model 2
-                   </option>
-                   {/* Add options for models here */}
-                 </select>
-           
-                 <select className="form-select" aria-label="Trim" value={trim} onChange={(e) => setTrim(e.target.value)} >
-                   <option value="" disabled>
-                     Trim
-                   </option>
+                  <select
+                    className="form-select"
+                    aria-label="Make"
+                    value={make}
+                    onChange={(e) => setMake(e.target.value)}
+                  >
+                    <option value="" disabled>
+                      Make
+                    </option>
+                    <option value="custom1">custom</option>
+                    <option value="custom2">custom 2</option>
+                  </select>
 
-                   <option value="Trim1">
-                     Trim 1
-                   </option>
-                   <option value="Trim2">
-                   Trim 2
-                   </option>
-                   {/* Add options for trims here */}
-                 </select>
-           
-                 <button type="submit" className="btn btn-shop">
-                   <span className="w-6" style={{ color: 'white' }}>
-                     SHOP TIRES & BOOK APPOINTMENT
-                   </span>
-                 </button>
-               </form>
-           
+                  <select
+                    className="form-select"
+                    aria-label="Model"
+                    value={model}
+                    onChange={(e) => setModel(e.target.value)}
+                  >
+                    <option value="" disabled>
+                      Model
+                    </option>
+                    {models.map((modelItem) => (
+                      <option key={modelItem.id} value={modelItem.modele}>
+                        {modelItem.modele}
+                      </option>
+                    ))}
+                  </select>
+
+                  <select
+                    className="form-select"
+                    aria-label="Trim"
+                    value={trim}
+                    onChange={(e) => setTrim(e.target.value)}
+                  >
+                    <option value="" disabled>
+                      Trim
+                    </option>
+
+                    <option value="Trim1">Trim 1</option>
+                    <option value="Trim2">Trim 2</option>
+                  </select>
+
+                  <button type="submit" className="btn btn-shop">
+                    <span className="w-6" style={{ color: "white" }}>
+                      SHOP TIRES & BOOK APPOINTMENT
+                    </span>
+                  </button>
+                </form>
               )}
 
               {tabs === "size" && (
                 <form>
-                  <select class="form-select" aria-label="Year">
+                  <select className="form-select" aria-label="Year">
                     <option selected>size</option>
                     <option value={145}>145</option>
                     <option value={155}>155</option>
@@ -335,15 +390,15 @@ const Home = () => {
                     <option value={37}>37</option>
                     <option value={38}>38</option>
                   </select>
-                  <select class="form-select" aria-label="Make">
+                  <select className="form-select" aria-label="Make">
                     <option selected>Ratio</option>
                   </select>
-                  <select class="form-select" aria-label="Model">
+                  <select className="form-select" aria-label="Model">
                     <option selected>Rim</option>
                   </select>
                   <button
                     type="submit"
-                    class="btn btn-shop"
+                    className="btn btn-shop"
                     style={{ color: "white" }}
                   >
                     <span className=" w-6">SHOP TIRES & BOOK APPOINTMENT</span>
@@ -354,7 +409,7 @@ const Home = () => {
                 <>
                   <button
                     type="submit"
-                    class="btn btn-shop"
+                    className="btn btn-shop"
                     style={{ color: "white" }}
                   >
                     <span className=" w-6">Shop By Brand</span>
@@ -437,64 +492,17 @@ const Home = () => {
         </div>
         <div className="middle-content">
           <div className="homepage-services-wrapper">
-            <a href="/services/pa-inspection-and-emissions-test/">
-              <div className="service-list-item">
-                <img
-                  src="https://tiresetc-media-files.s3.amazonaws.com/images/services/byop-icon.png"
-                  alt="$44.99 PA Inspection icon"
-                />
-                <h5>Suspention</h5>
-              </div>
-            </a>
-            <a href="/services/valvoline-oil-change/">
-              <div className="service-list-item">
-                <img
-                  src="https://tiresetc-media-files.s3.amazonaws.com/images/services/valvoline-oil-change-icon.png"
-                  alt="Valvoline Oil Change icon"
-                />
-                <h5>Oil Change / Lubes</h5>
-              </div>
-            </a>
-            <a href="/services/alignment/">
-              <div className="service-list-item">
-                <img
-                  src="https://tiresetc-media-files.s3.amazonaws.com/images/services/alignment-icon.png"
-                  alt="Alignment icon"
-                />
-                <h5>Alignment</h5>
-              </div>
-            </a>
-            <a href="/services/brake-service/">
-              <div className="service-list-item">
-                <img
-                  src="https://tiresetc-media-files.s3.amazonaws.com/images/services/brakes-icon.png"
-                  alt="Brake Service icon"
-                />
-                <h5>Tires / Brakes</h5>
-              </div>
-            </a>
-            <a href="/services/heating-and-air-conditioning/">
-              <div className="service-list-item">
-                <img src={Mufflers} alt="Car A/C Service icon" />
-                <h5>Mufflers</h5>
-              </div>
-            </a>
-            <a href="/services/check-engine-light/">
-              <div className="service-list-item">
-                <img src={Rim} alt="Check Engine Light icon" />
-                <h5>Rim / Tire Sales</h5>
-              </div>
-            </a>
-            <a href="/services/bring-your-own-parts/">
-              <div className="service-list-item overflow-hidden">
-                <img
-                  src={Towing}
-                  style={{ transform: "scale(1.2)" }}
-                  alt="Bring Your Own Parts icon"
-                />
-                <h5>Towing Services</h5>
-              </div>
-            </a>
+            {services.map((service) => (
+              <a href={`/services/${service.id}`} key={service.id}>
+                <div className="service-list-item">
+                  <img
+                    src={`https://tirealigners.com/admin/public/${service.icon}`}
+                    alt={service.title}
+                  />
+                  <h5>{service.title}</h5>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
         {/* Amenities */}
@@ -593,11 +601,11 @@ const Home = () => {
                 style={{ width: "90%", justifyContent: "left" }}
               >
                 <img
-                  style={{ width: "100%", objectFit: "cover" }}
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuBgpMyzoMGrjZtB6LqhFVATtOwyPnKscqqA&s"
+                  style={{ width: "100%", objectFit: "cover", height: "300px" }}
+                  src={location}
                   alt="Montgomeryville Store Image"
                 />
-                <h4>Wilmington</h4>
+                <h4>United States</h4>
                 <div
                   style={{
                     textAlign: "left",
@@ -625,12 +633,12 @@ const Home = () => {
                     className="address text-left"
                     style={{ textAlign: "left", fontSize: "24px" }}
                   >
-                    401 S Dupont Hwy LOT B, New Castle, DE 19720
+                    401 S Dupont Hwy LOT B, New Castle, DE 19720, United States
                   </p>
-                  <CalendarRangeIcon
+                  {/* <CalendarRangeIcon
                     style={{ color: "#F2184F", height: "20px", width: "20px" }}
-                  />{" "}
-                  <span
+                  />{" "} */}
+                  {/* <span
                     className="address text-left "
                     style={{
                       textAlign: "left",
@@ -647,7 +655,7 @@ const Home = () => {
                     style={{ textAlign: "left", fontSize: "24px" }}
                   >
                     456 Elm Street, Wilmington, Delaware, 19801
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </a>

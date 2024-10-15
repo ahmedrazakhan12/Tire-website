@@ -31,7 +31,7 @@ const Appointment = () => {
     // You can send formData to a backend here
     try {
       const response = await axios.post(
-        "http://localhost/admin/api/appointment",
+        "https://tirealigners.com/admin/api/appointment",
         formData,
         {
           headers: {
@@ -233,7 +233,6 @@ const Appointment = () => {
             onChange={handleChange}
           />
         </div>
-
         <button type="submit">Submit</button>
       </form>
     </>
