@@ -27,6 +27,8 @@ import "react-toastify/dist/ReactToastify.css";
 import ViewCart from "./screens/ViewCart";
 import { useEffect, useState } from "react";
 import SingleService from "./screens/service/SingleService";
+import Faqs from "./screens/Faqs";
+import Testimonial from "./screens/Testimonial";
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -66,7 +68,7 @@ function App() {
       icon: <ShoppingCart />, // Custom icon
       style: {
         borderRadius: "8px",
-        color: "#F2184F", // Custom text color
+        color: "#f47121", // Custom text color
       },
     });
 
@@ -94,7 +96,7 @@ function App() {
         <a
           href="/view-cart"
           style={{
-            background: "#F2184F",
+            background: "#f47121",
             borderRadius: "50%",
             cursor: "pointer",
             padding: "11px",
@@ -165,6 +167,8 @@ function App() {
           <Route path="/search-by-size" element={<SearchBySize />} />
           <Route path="/search-by-vehicle" element={<SearchByVehicle />} />
           <Route path="/create-account" element={<Register />} />
+          <Route path="/faqs" element={<Faqs />} />
+          <Route path="/testimonials" element={<Testimonial />} />
           <Route path="/login" element={<Login />} />
           <Route
             path="/tires/catalog"
@@ -214,30 +218,7 @@ function App() {
           {/* <Route path="/contact" element={<Contact />} /> */}
         </Routes>
         <Footer />
-        {/* <div
-          className="  "
-          style={{
-            color: "rgb(32 44 69)",
-            background: "rgb(32 44 69)",
-            userSelect: "none",
-            visibility: "hidden",
-          }}
-        >
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
-          magni perferendis modi quam ipsa! A eaque consequatur iusto. Enim
-          cupiditate quasi vero provident ipsum ipsam iste fugiat blanditiis.
-          Commodi sapiente non neque enim! Cupiditate
-        </div> */}
-
-        {/* <div
-          className="text-center p-3 text-white"
-          style={{ backgroundColor: "rgb(242, 24, 79)" }}
-        >
-          © 2020 Copyright:
-          <a className="text-white" href="https://tirealigners.com">
-            Tire Alligners
-          </a>
-        </div> */}
+      
       </Router>
     </div>
   );

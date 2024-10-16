@@ -19,7 +19,9 @@
   width: 30px;
   height: 30px;
 }
-
+.color-image{
+  filter: brightness(0) saturate(100%) invert(52%) sepia(44%) saturate(2933%) hue-rotate(348deg) brightness(99%) contrast(94%);
+}
 
 .form-container {
   background: linear-gradient(#fff 10%, rgba(252, 252, 252, 0.682), rgba(252, 252, 252, 0.564));
@@ -31,7 +33,7 @@
 }
 
 .header-nav .header-nav-wrapper.scroll-to-fixed-fixed.scroll-to-fixed-fixed {
-  background-color: #202c45;
+  background-color: #ec2424;
   border: none !important;
 }
 
@@ -40,7 +42,7 @@
 }
 
 .form-title {
-  color: #F2184F !important;
+  color: #f47121 !important;
   font-size: 28px !important;
   font-weight: 900 !important;
   margin-bottom: 20px !important;
@@ -96,7 +98,7 @@
 }
 
 .btn-shop {
-  background-color: #F2184F !important;
+  background-color: #f47121 !important;
   border: none !important;
   color: #040404;
   font-weight: 600 !important;
@@ -147,7 +149,7 @@
 }
 
 .overlay-theme-colored-custom {
-  background-color: #202c45 !important;
+  background-color: #ec2424 !important;
 
 }
 
@@ -372,7 +374,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+ 
 body {
   font-family: "noto sans", sans-serif;
 }
@@ -382,15 +384,15 @@ body {
 }
 
 .anchorTag:hover {
-  color: rgb(242, 24, 79) !important;
+  color: #f47121 !important;
 }
 
 .pTag:hover {
-  background-color: #202c45 !important;
+  background-color: #ec2424 !important;
 }
 
 .pTag {
-  background-color: "rgb(242, 24, 79)" !important;
+  background-color: "#f47121" !important;
 }
 
 .timeline ul {
@@ -471,7 +473,7 @@ time {
 }
 
 .timeline ul li.in-view::after {
-  background: #F2184F;
+  background: #f47121;
 }
 
 .timeline ul li div {
@@ -626,7 +628,7 @@ time {
   width: 100%;
   padding: 12px;
   font-size: 16px;
-  background-color: #F2184F;
+  background-color: #f47121;
   border: none;
   border-radius: 4px;
   color: white;
@@ -689,7 +691,7 @@ time {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #202c45;
+  background: #ec2424;
 }
 
 #sidebar ul.components {
@@ -701,12 +703,12 @@ time {
   padding: 10px;
   font-size: 1.1em;
   display: block;
-  color: #F2184F;
+  color: #f47121;
 }
 
 #sidebar ul li a:hover {
   color: white;
-  background: #F2184F;
+  background: #f47121;
 }
 
 .overlay {
@@ -821,7 +823,7 @@ h1 {
 }
 
 .remove-product {
-  background-color: #dc3545;
+  background-color: #f47121;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -870,4 +872,82 @@ h1 {
 
 .checkout:hover {
   background-color: #0056b3;
+}
+
+
+#accordion {  
+  .card-header{
+      margin-bottom: 8px;
+  }
+  .accordion-title{
+      position: relative;
+      display: block;
+      padding:8px 0 8px 50px;
+      background: #2d3685;
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      width: 100%;
+      text-align: left;
+      transition: all .4s ease-in-out; 
+      i{
+          position: absolute;
+          width: 40px;
+          height: 100%;
+          left: 0;
+          top: 0;
+          color: #fff;
+          background: radial-gradient(rgba(#2d3685, .8), #2d3685);
+          text-align: center;
+          border-right: 1px solid transparent;
+      }
+      &:hover{
+          padding-left: 60px;
+          background: #2d3685;
+          color: #fff;
+          
+          i {
+              border-right: 1px solid #fff;
+          }
+      }
+  }
+  [aria-expanded="true"]{
+      background: #f47121;
+      color: #ffffff;
+      i {
+        color: #ffffff;
+        ;
+          background: #f47121;
+        &:before{
+              content: "\f068" ;
+          }
+      }
+  }
+  .accordion-body{
+      padding: 40px 55px;
+  }
+}
+
+
+.testimonial-card {
+  border: 1px solid #007bff;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.02);
+}
+
+.card-title {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.card-text {
+  font-style: italic;
+  color: #555;
 }

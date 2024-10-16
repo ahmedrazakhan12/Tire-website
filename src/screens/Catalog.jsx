@@ -940,7 +940,7 @@ const Catalog = ({addToCart}) => {
                     .lyft-banner {
                       display: flex;
                       align-items: center;
-                      background-color: #f2184f;
+                      background-color: #f47121;
                       color: white;
                       padding: 0px 35px;
                       border-radius: 8px;

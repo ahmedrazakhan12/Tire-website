@@ -105,7 +105,7 @@ const Header = () => {
                 <button
                   onClick={() => navigate("/appointment")}
                   style={{
-                    backgroundColor: "#F2184F",
+                    backgroundColor: "#f47121",
                     color: "white",
                     borderRadius: "5px",
                     padding: "10px 20px",
@@ -232,7 +232,7 @@ const Header = () => {
                   <button
                     onClick={() => navigate("/appointment")}
                     style={{
-                      backgroundColor: "#F2184F",
+                      backgroundColor: "#f47121",
                       color: "white",
                       borderRadius: "5px",
                       padding: "10px 20px",

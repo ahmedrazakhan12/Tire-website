@@ -211,7 +211,7 @@ const ContactUS = () => {
               <div className="form-actions">
                 {" "}
                 <input
-                  style={{ backgroundColor: "#f2184f", color: "white" }}
+                  style={{ backgroundColor: "#f47121", color: "white" }}
                   type="button"
                   onClick={handleSubmit}
                   // name="submit"

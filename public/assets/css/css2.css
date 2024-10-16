@@ -48,7 +48,7 @@ button.link,
 button.link:not([href]):not([tabindex]),
 a:not([href]):not([tabindex]) {
   text-decoration: none;
-  color: #F2184F;
+  color: #f47121;
   cursor: pointer;
 }
 
@@ -199,7 +199,7 @@ button.link-inline {
 
 .btn-primary {
   color: white;
-  background-color: #F2184F;
+  background-color: #f47121;
 }
 
 .btn-primary:hover {
@@ -209,7 +209,7 @@ button.link-inline {
 
 .btn-orange {
   color: white;
-  background-color: #202c45;
+  background-color: #303d8c;
 }
 
 .btn-orange:hover {
@@ -332,12 +332,12 @@ button.link-inline {
 }
 
 .tab-bar-item:hover {
-  background-color: #F2184F;
+  background-color: #f47121;
   color: white;
 }
 
 .tab-bar-item.selected {
-  background-color: #f2184f;
+  background-color: #f47121;
   color: white;
   cursor: default;
   border: none;
@@ -747,7 +747,7 @@ button.link-inline {
 .app-with-nav ul.app-nav li {
   border-bottom: solid #ddd 2px;
   padding: 1rem 2.5rem 1rem 1rem;
-  color: #F2184F;
+  color: #f47121;
   font-size: 1.25em;
   font-weight: bold;
 }
@@ -1157,7 +1157,7 @@ button.unstyled.link-inline {
 }
 
 .pagination .fas {
-  color: #F2184F;
+  color: #f47121;
   font-size: 28px;
 }
 
@@ -1180,7 +1180,7 @@ button.unstyled.link-inline {
 .pagination-small button,
 .pagination-small span {
   padding: 0 0.75em;
-  color: #F2184F;
+  color: #f47121;
   border-top: solid #aaa 1px;
   border-bottom: solid #aaa 1px;
   border-right: solid #aaa 1px;
@@ -1195,7 +1195,7 @@ button.unstyled.link-inline {
 
 .pagination-small button:disabled,
 .pagination-small span:disabled {
-  background-color: #F2184F;
+  background-color: #f47121;
   color: white;
   border-color: #666;
 }
@@ -1281,11 +1281,11 @@ button.unstyled.link-inline {
 }
 
 .color-blue {
-  color: #F2184F;
+  color: #f47121;
 }
 
 .color-orange {
-  color: #202c45;
+  color: #303d8c;
 }
 
 .color-inherit {
@@ -1477,7 +1477,7 @@ button.unstyled.link-inline {
 }
 
 .modal-close:hover {
-  color: #202c45;
+  color: #303d8c;
 }
 
 .under-construction {
@@ -1571,7 +1571,7 @@ ul.small-horizontal-bordered li:last-of-type {
   align-items: center;
   font-family: "Courgette", cursive;
   /* font-family: Courgette, sans-serif; */
-  background-color: #F2184F;
+  background-color: #f47121;
   color: white;
   font-size: 1.3rem;
   font-weight: bold;
@@ -1634,7 +1634,7 @@ ul.small-horizontal-bordered li:last-of-type {
 }
 
 .site-header-nav div:hover {
-  color: #F2184F;
+  color: #f47121;
 }
 
 .site-header-nav div:hover .site-header-sub-menu {
@@ -1649,7 +1649,7 @@ ul.small-horizontal-bordered li:last-of-type {
 }
 
 .site-header-nav div a:hover {
-  color: #EE2424;
+  color: #303d8c;
 }
 
 .site-header-nav div .site-header-sub-menu {
@@ -1677,7 +1677,7 @@ ul.small-horizontal-bordered li:last-of-type {
 .site-header-nav div .site-header-sub-menu a:hover,
 .site-header-nav div .site-header-sub-menu button.link:hover,
 .site-header-nav div .site-header-sub-menu button.link-inline:hover {
-  background-color: #202c45 !important;
+  background-color: #303d8c !important;
 }
 
 .site-header-right-container {
@@ -1702,7 +1702,7 @@ ul.small-horizontal-bordered li:last-of-type {
 .site-header-right-row:hover a,
 .site-header-right-row:hover button.link,
 .site-header-right-row:hover button.link-inline {
-  color: #F2184F;
+  color: #f47121;
 }
 
 .site-header-right-row div {
@@ -1884,7 +1884,7 @@ ul.small-horizontal-bordered li:last-of-type {
 .site-footer {
   margin-top: auto;
   width: 100%;
-  background-color: #202c45;
+  background-color: #303d8c;
   color: white;
   font-size: 0.8rem;
 }
@@ -1980,7 +1980,7 @@ ul.small-horizontal-bordered li:last-of-type {
 .tire-finder h4,
 #vehicle-form-holder h4 {
   font-family: "Nunito", sans-serif;
-  color: #202c45;
+  color: #303d8c;
   text-align: center;
   font-size: 40px;
   font-weight: 900;
@@ -2081,7 +2081,7 @@ ul.small-horizontal-bordered li:last-of-type {
 }
 
 .homepage-content-header {
-  background-color: rgb(32 44 69);
+  background-color: #303d8c;
   padding: 1rem 2rem;
   min-height: 160px;
 }
@@ -2439,7 +2439,7 @@ ul.small-horizontal-bordered li:last-of-type {
 }
 
 .tire-search-param-head.active {
-  background-color: #F2184F;
+  background-color: #f47121;
 }
 
 .tire-search-param-head.disabled {
@@ -2475,7 +2475,7 @@ ul.small-horizontal-bordered li:last-of-type {
   margin: 0.6em;
   border-radius: 8px;
   box-shadow: 0 0 8px #333;
-  color: #F2184F;
+  color: #f47121;
   font-size: 1.2em;
   font-family: Montserrat, sans-serif;
 }
@@ -2486,7 +2486,7 @@ ul.small-horizontal-bordered li:last-of-type {
 }
 
 .tire-search-option.selected {
-  background-color: #f2184f;
+  background-color: #f47121;
   color: white;
   cursor: default;
   box-shadow: none;
@@ -2618,7 +2618,7 @@ ul.small-horizontal-bordered li:last-of-type {
 .brand-page-models-container a.model-wrapper:hover,
 .brand-page-models-container button.model-wrapper.link:hover,
 .brand-page-models-container button.model-wrapper.link-inline:hover {
-  box-shadow: 0 0 16px #F2184F;
+  box-shadow: 0 0 16px #f47121;
 }
 
 .brand-page-models-container a.model-wrapper img,
@@ -2834,7 +2834,7 @@ ul.detail-page-specs li span {
 
 .gbb-carousel .carousel-indicators li {
   height: 5px;
-  background-color: #F2184F;
+  background-color: #f47121;
   margin-left: 6px;
   margin-right: 6px;
 }
@@ -2861,7 +2861,7 @@ ul.detail-page-specs li span {
 }
 
 .catalog-head h1 span {
-  color: #F2184F;
+  color: #f47121;
 }
 
 .catalog-container {
@@ -2892,7 +2892,7 @@ ul.detail-page-specs li span {
 }
 
 .clear-filters.blue {
-  color: #F2184F;
+  color: #f47121;
 }
 
 .catalog-filters {
@@ -3042,7 +3042,7 @@ ul.detail-page-specs li span {
 }
 
 .catalog-filters .filter-item .filter-head.active {
-  color: #F2184F;
+  color: #f47121;
 }
 
 .catalog-filters .filter-item .filter-head.active h4 {
@@ -3220,7 +3220,7 @@ ul.detail-page-specs li span {
 .result-card-collapsible-item .rcc-header .wrapper .icon {
   min-width: 3rem;
   font-size: 2rem;
-  color: #202c45;
+  color: #303d8c;
 }
 
 .result-card-collapsible-item .rcc-header .wrapper .icon.blue {
@@ -3296,7 +3296,7 @@ ul.detail-page-specs li span {
 .price-info span.price {
   font-family: Montserrat, sans-serif;
   font-size: 1.75em;
-  color: #202c45;
+  color: #303d8c;
 }
 
 .price-container {
@@ -3404,7 +3404,7 @@ ul.detail-page-specs li span {
 
 .m-result-card .info-col .price-container span.price {
   font-family: Montserrat, sans-serif;
-  color: #202c45;
+  color: #303d8c;
   font-size: 7vw;
 }
 
@@ -3456,7 +3456,7 @@ ul.detail-page-specs li span {
 }
 
 .m-result-card.gbb-card .gbb-card-header {
-  background-color: #F2184F;
+  background-color: #f47121;
   color: white;
   text-align: center;
   padding: 8px;
@@ -3608,7 +3608,7 @@ ul.detail-page-specs li span {
 .monthly-payments-box .price-line .price {
   font-size: 1.4rem;
   font-family: Montserrat, sans-serif;
-  color: #202c45;
+  color: #303d8c;
 }
 
 .monthly-payments-box .bottom-line {
@@ -3928,7 +3928,7 @@ table.fitment-options td.split-fitment {
 .cart-tire-pricing .subtotal .price {
   font-family: Montserrat, sans-serif;
   font-size: 1.5rem;
-  color: #202c45;
+  color: #303d8c;
 }
 
 .cart-tire-pricing .subtotal span {
@@ -3946,7 +3946,7 @@ table.fitment-options td.split-fitment {
 }
 
 .cart-fee .fee-header.discount {
-  background-color: #F2184F;
+  background-color: #f47121;
   padding: 0.75rem 0.5rem;
   border-radius: 6px;
   color: white;
@@ -3988,7 +3988,7 @@ table.fitment-options td.split-fitment {
   justify-content: flex-end;
   font-family: Montserrat, sans-serif;
   font-size: 1.8em;
-  color: #202c45;
+  color: #303d8c;
   margin-top: 0.5rem;
 }
 
@@ -4015,7 +4015,7 @@ table.fitment-options td.split-fitment {
   border-radius: 0.25em;
   font-size: 1.4em;
   font-family: Roboto, sans-serif;
-  background-color: #F2184F;
+  background-color: #f47121;
   color: white;
 }
 
@@ -4057,7 +4057,7 @@ table.fitment-options td.split-fitment {
 }
 
 .totals-box .row:last-of-type span:last-of-type {
-  color: #F2184F;
+  color: #f47121;
   font-family: Montserrat, sans-serif;
 }
 
@@ -4170,7 +4170,7 @@ table.fitment-options td.split-fitment {
 .store-info p.phone-number {
   font-size: 2.5rem;
   font-family: Roboto, sans-serif;
-  color: #202c45;
+  color: #303d8c;
 }
 
 @media screen and (max-width: 400px) {
@@ -4235,7 +4235,7 @@ table.fitment-options td.split-fitment {
 
 .store-description .image-wrapper p {
   margin: 0 0 0 7px;
-  color: #202c45;
+  color: #303d8c;
 }
 
 .store-description .image-wrapper p:first-of-type {
@@ -4320,7 +4320,7 @@ table.fitment-options td.split-fitment {
 .location-modal-block button.phone-number.link-inline {
   font-size: 1.2rem;
   font-family: Montserrat, sans-serif;
-  color: #202c45;
+  color: #303d8c;
   margin: 0;
 }
 
@@ -4360,7 +4360,7 @@ table.fitment-options td.split-fitment {
 .location-card p.phone-number {
   font-size: 1.2rem;
   font-family: Montserrat, sans-serif;
-  color: #202c45;
+  color: #303d8c;
   margin: 0;
 }
 
@@ -4396,7 +4396,7 @@ table.fitment-options td.split-fitment {
 }
 
 .coupon .coupon-header h2 {
-  color: #202c45;
+  color: #303d8c;
   font-size: 1.75rem;
   margin: 0;
 }
@@ -4453,7 +4453,7 @@ table.fitment-options td.split-fitment {
 }
 
 .specials-list-item .expires-soon .fas {
-  color: #202c45;
+  color: #303d8c;
 }
 
 .special-header-image-wrapper {
@@ -4482,7 +4482,7 @@ table.fitment-options td.split-fitment {
 
 .special-detail-h1 {
   font-size: 1.8em;
-  color: #F2184F;
+  color: #f47121;
 }
 
 .special-detail-h2 {
@@ -4493,7 +4493,7 @@ table.fitment-options td.split-fitment {
 
 .special-detail-h3 {
   font-size: 1.4em;
-  color: #202c45;
+  color: #303d8c;
   margin: 1em 0 0.5em 0;
 }
 
@@ -4765,12 +4765,12 @@ table.fitment-options td.split-fitment {
 }
 
 .service-faqs h3 {
-  color: #202c45;
+  color: #303d8c;
   font-family: Montserrat, sans-serif;
 }
 
 .service-faqs .question {
-  background-color: #202c45;
+  background-color: #303d8c;
   color: white;
   font-family: Roboto, sans-serif;
   padding: 0.5em;
@@ -4817,7 +4817,7 @@ table.fitment-options td.split-fitment {
   font-size: 1.5rem;
   font-weight: bold;
   font-family: Montserrat, sans-serif;
-  color: #F2184F;
+  color: #f47121;
 }
 
 .calendar-header div {
@@ -4838,7 +4838,7 @@ table.calendar td {
 }
 
 table.calendar td.available {
-  color: #F2184F;
+  color: #f47121;
   font-family: Roboto, sans-serif;
 }
 
@@ -4854,7 +4854,7 @@ table.calendar td.selected span {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f2184f;
+  background-color: #f47121;
   color: white;
 }
 
@@ -4980,7 +4980,7 @@ table.calendar td.today {
   display: inline-block;
   padding: 2rem;
   border-radius: 50%;
-  background-color: #F2184F;
+  background-color: #f47121;
   color: white;
   font-weight: bold;
   text-align: center;
@@ -5093,7 +5093,7 @@ table.appointment-cart-table td.subtotal {
 table.appointment-cart-table td.total {
   font-size: 1.5rem;
   font-family: Roboto, sans-serif;
-  color: #202c45;
+  color: #303d8c;
 }
 
 .book-appointment-form {

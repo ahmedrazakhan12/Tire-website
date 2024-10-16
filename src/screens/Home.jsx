@@ -187,7 +187,7 @@ const Home = () => {
                     .lyft-banner {
                       display: flex;
                       align-items: center;
-                      background-color: #f2184f;
+                      background-color: #f47121;
                       color: white;
                       padding: 0px 35px;
                       border-radius: 8px;
@@ -553,14 +553,14 @@ const Home = () => {
         <div className="middle-content">
           <div className="amenity-row">
             <div className="amenity">
-              <img src={ArmChair} alt="" />
+              <img src={ArmChair} alt="" className="color-image"/>
               <div>
                 <h5>After Hours Drop Box</h5>
                 <p>Securely drop your vehicle off any time, 24 hours a day.</p>
               </div>
             </div>
             <div className="amenity">
-              <img src={Lockbox} alt="" />
+              <img src={Lockbox} alt="" className="color-image"/>
               <div>
                 <h5>Complimentary Lyft Ride</h5>
                 <p>
@@ -575,7 +575,7 @@ const Home = () => {
           </div>
           <div className="amenity-row">
             <div className="amenity">
-              <img src={TaxiImage} alt="" />
+              <img src={TaxiImage} alt="" className="color-image"/>
               <div>
                 <h5>Comfortable Amenities</h5>
                 <p>
@@ -585,7 +585,7 @@ const Home = () => {
               </div>
             </div>
             <div className="amenity">
-              <img src={TodayImage} alt="" />
+              <img src={TodayImage} alt="" className="color-image"/>
               <div>
                 <h5>Same-Day Service Available</h5>
                 <p>
@@ -640,7 +640,7 @@ const Home = () => {
                   }}
                 >
                   <CalendarRangeIcon
-                    style={{ color: "#F2184F", height: "20px", width: "20px" }}
+                    style={{ color: "#f47121", height: "20px", width: "20px" }}
                   />
                   <span
                     className="address text-left "
@@ -648,7 +648,7 @@ const Home = () => {
                       textAlign: "left",
                       marginTop: "20px",
                       fontWeight: "800",
-                      color: "#F2184F",
+                      color: "#f47121",
                       fontSize: "15px",
                     }}
                   >
@@ -662,7 +662,7 @@ const Home = () => {
                     401 S Dupont Hwy LOT B, New Castle, DE 19720, United States
                   </p>
                   {/* <CalendarRangeIcon
-                    style={{ color: "#F2184F", height: "20px", width: "20px" }}
+                    style={{ color: "#f47121", height: "20px", width: "20px" }}
                   />{" "} */}
                   {/* <span
                     className="address text-left "
@@ -671,7 +671,7 @@ const Home = () => {
                       marginTop: "20px",
                       fontWeight: "800",
                       fontSize: "15px",
-                      color: "#F2184F",
+                      color: "#f47121",
                     }}
                   >
                     Wilmington Location: :
@@ -743,7 +743,7 @@ const Home = () => {
           >
             <p
               style={{
-                backgroundColor: "rgb(242, 24, 79)",
+                backgroundColor: "#f47121",
                 padding: "10px",
                 borderRadius: "15px",
                 paddingLeft: "15px",
@@ -765,7 +765,7 @@ const Home = () => {
             </p>
             <p
               style={{
-                backgroundColor: "rgb(242, 24, 79)",
+                backgroundColor: "#f47121",
                 padding: "10px",
                 borderRadius: "15px",
                 paddingLeft: "15px",
