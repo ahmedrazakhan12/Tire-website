@@ -86,7 +86,6 @@ const Footer = () => {
     border: "none",
     borderRadius: "0 4px 4px 0",
     cursor: "pointer",
-    
   };
 
   const socialIconStyle = {
@@ -106,6 +105,9 @@ const Footer = () => {
             <p style={{ fontSize: "14px" }}>
               401 S Dupont Hwy LOT B, New Castle, DE 19720, United States
             </p>
+            <p style={{ fontSize: "14px" }}>
+              Wilmington: 456 Elm Street, Wilmington, Delaware, 19801
+            </p>
           </div>
         </div>
         <div style={infoBoxStyle}>
@@ -114,7 +116,8 @@ const Footer = () => {
             <h3 style={headingStyle}>
               <span style={{ color: "#2E4E53" }}>Call Us</span>
             </h3>
-            <p style={{ fontSize: "14px" }}>(+13) 025 446 246</p>
+            <p style={{ fontSize: "14px" }}>302.544.6246 </p>
+            <p style={{ fontSize: "14px" }}>302.650.9861</p>
           </div>
         </div>
         <div style={infoBoxStyle}>
@@ -123,8 +126,8 @@ const Footer = () => {
             <h3 style={headingStyle}>
               <span style={{ color: "#2E4E53" }}>Email Us</span>
             </h3>
-            <p style={{ fontSize: "14px" }}>help@serenitet.com</p>
-            <p style={{ fontSize: "14px" }}>support@serenite.com</p>
+            <p style={{ fontSize: "14px" }}>contact@tirealigners.com</p>
+            <p style={{ fontSize: "14px" }}>service@tirealigners.com</p>
           </div>
         </div>
       </div>
@@ -146,7 +149,13 @@ const Footer = () => {
           />
           <h3 style={headingStyle}>Subscribe Our Newsletter</h3>
           <p>Best for one-man bands, web creators, and freelancers.</p>
-          <div style={{ display: "flex", marginTop: "20px", justifyContent: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              marginTop: "20px",
+              justifyContent: "center",
+            }}
+          >
             <input
               type="email"
               placeholder="Enter your email address"
@@ -161,14 +170,19 @@ const Footer = () => {
             <Instagram size={24} style={socialIconStyle} />
           </div>
         </div>
-        <div style={{ ...columnStyle, paddingLeft: "30px" }} className="footer-testing">
+        <div
+          style={{ ...columnStyle, paddingLeft: "30px" }}
+          className="footer-testing"
+        >
           <h3 style={headingStyle}>About Us</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna
             lectus, mattis non accumsan in, tempor dictum neque.
           </p>
           <div style={{ marginTop: "20px" }}>
-            <h4 style={{ ...headingStyle, display: "flex", alignItems: "center" }}>
+            <h4
+              style={{ ...headingStyle, display: "flex", alignItems: "center" }}
+            >
               <Clock size={20} style={{ marginRight: "10px" }} /> Opening Hours
             </h4>
             <p>Mon - Fri 9 AM - 6 PM,</p>
@@ -179,27 +193,46 @@ const Footer = () => {
 
         <div style={columnStyle}>
           <h3 style={headingStyle}>Company</h3>
-          <a href="#" style={linkStyle}>About</a>
-          <a href="#" style={linkStyle}>Contact Us</a>
-          <a href="#" style={linkStyle}>Blog</a>
-          <a href="#" style={linkStyle}>Culture</a>
-          <a href="#" style={linkStyle}>Jobs</a>
+          <a href="#" style={linkStyle}>
+            About
+          </a>
+          <a href="#" style={linkStyle}>
+            Contact Us
+          </a>
+          <a href="#" style={linkStyle}>
+            Blog
+          </a>
+          <a href="#" style={linkStyle}>
+            Culture
+          </a>
+          <a href="#" style={linkStyle}>
+            Jobs
+          </a>
         </div>
 
         <div style={columnStyle}>
           <h3 style={headingStyle}>Support</h3>
-          <a href="#" style={linkStyle}>Getting started</a>
-          <a href="#" style={linkStyle}>Chat our support</a>
-          <a href="#" style={linkStyle}>Help center</a>
-          <a href="#" style={linkStyle}>Services status</a>
-          <a href="#" style={linkStyle}>Report a bug</a>
-         
- {/* <div style={{marginTop:"100px" }}> */}
-            {/* <p style={{marginLeft:"-100px"}}>Copyright © 2024 Serenite Theme All rights reserved.</p> */}
+          <a href="#" style={linkStyle}>
+            Getting started
+          </a>
+          <a href="#" style={linkStyle}>
+            Chat our support
+          </a>
+          <a href="#" style={linkStyle}>
+            Help center
+          </a>
+          <a href="#" style={linkStyle}>
+            Services status
+          </a>
+          <a href="#" style={linkStyle}>
+            Report a bug
+          </a>
+
+          {/* <div style={{marginTop:"100px" }}> */}
+          {/* <p style={{marginLeft:"-100px"}}>Copyright © 2024 Serenite Theme All rights reserved.</p> */}
           {/* </div> */}
         </div>
-<div>
-</div>
+        <div></div>
       </div>
 
       {/* Media Queries */}

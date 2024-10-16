@@ -27,6 +27,8 @@ const Home = () => {
   const [make, setMake] = useState("");
   const [model, setModel] = useState("");
   const [trim, setTrim] = useState("");
+  const [activeYear, setActiveYear] = useState("");
+  const [activeMake, setActiveMake] = useState("");
 
   // State to hold model data fetched from the API
   const [models, setModels] = useState([]);
@@ -287,7 +289,11 @@ const Home = () => {
                     className="form-select"
                     aria-label="Year"
                     value={year}
-                    onChange={(e) => setYear(e.target.value)}
+                    required
+                    onChange={(e) => {
+                      setYear(e.target.value);
+                      setActiveYear(e.target.value);
+                    }}
                   >
                     <option value="" disabled>
                       Year
@@ -298,12 +304,15 @@ const Home = () => {
                       </option>
                     ))}
                   </select>
-
                   <select
                     className="form-select"
                     aria-label="Make"
                     value={make}
-                    onChange={(e) => setMake(e.target.value)}
+                    onChange={(e) => {
+                      setMake(e.target.value);
+                      setActiveMake(e.target.value);
+                    }}
+                    required
                   >
                     <option value="" disabled>
                       Make
@@ -337,28 +346,371 @@ const Home = () => {
                     <option value="Lotus">Lotus</option>
                     <option value="Maserati">Maserati</option>
                   </select>
-
                   <select
                     className="form-select"
                     aria-label="Model"
                     value={model}
                     onChange={(e) => setModel(e.target.value)}
+                    required
                   >
                     <option value="" disabled>
                       Model
                     </option>
-                    {models.map((modelItem) => (
-                      <option key={modelItem.id} value={modelItem.modele}>
-                        {modelItem.modele}
-                      </option>
-                    ))}
+                    {activeMake === "Acura" && (
+                      <>
+                        <option value="Integra">Integra</option>
+                        <option value="MDX">MDX</option>
+                        <option value="RDX">RDX</option>
+                        <option value="TLX">TLX</option>
+                      </>
+                    )}
+                    {activeMake === "Aston Martin" && (
+                      <>
+                        <option value="DB11">DB12</option>
+                        <option value="DBS">DBX707</option>
+                        <option value="Vantage">Vantage</option>
+                      </>
+                    )}
+                    {activeMake === "Audi" && (
+                      <>
+                        <option value="A3 Quattro">A3 Quattro</option>
+                        <option value="A4 Quattro">A4 Quattro</option>
+                        <option value="A4 allroad">A4 allroad</option>
+                        <option value="A5 Sportback">A5 Sportback</option>
+                        <option value="A6 Quattro">A6 Quattro</option>
+                        <option value="A6 allroad">A6 allroad</option>
+                        <option value="A7 Sportback">A7 Sportback</option>
+                        <option value="Q7">Q7</option>
+                        <option value="Q8">Q8</option>
+                        <option value="RS5 Sportback">RS5 Sportback</option>
+                        <option value="RS6 Avant">RS6 Avant</option>
+                        <option value="S3">S3</option>
+                        <option value="S4">S4</option>
+                        <option value="S5 Sportback">S5 Sportback</option>
+                        <option value="S6">S6</option>
+                        <option value="S7 Sportback">S7 Sportback</option>
+                        <option value="SQ7">SQ7</option>
+                        <option value="SQ8">SQ8</option>
+                      </>
+                    )}
+                    {activeMake === "BMW" && (
+                      <>
+                        <option value="230i">230i</option>
+                        <option value="230i xDrive">230i xDrive</option>
+                        <option value="330i">330i</option>
+                        <option value="330i x3rive">230i xDrive</option>
+                        <option value="430i">430i</option>
+                        <option value="430i gran Coupe">430i gran Coupe</option>
+                        <option value="530i">530i</option>
+                        <option value="530i xDrive">530i xDrive</option>
+                        <option value="540i xDrive">540i xDrive</option>
+                        <option value="550i xDrive">550i xDrive</option>
+                        <option value="740i">740i</option>
+                        <option value="740i xDrive">740i xDrive</option>
+                      </>
+                    )}
+                    {activeMake === "Buick" && (
+                      <>
+                        <option value="Enclave">Enclave</option>
+                        <option value="Encore GX">Encore GX</option>
+                        <option value="Envista">Envista</option>
+                      </>
+                    )}
+                    {activeMake === "Cadillac" && (
+                      <>
+                        <option value="CTA4">CTA4</option>
+                        <option value="CT5">CT5</option>
+                        <option value="XT4">XT4</option>
+                        <option value="XT5">XT5</option>
+                        <option value="XT6">XT6</option>
+                      </>
+                    )}
+                    {activeMake === "Chevrolet" && (
+                      <>
+                        <option value="Blazer">Blazer</option>
+                        <option value="Equinox">Equinox</option>
+                        <option value="Suburban">Suburban</option>
+                        <option value="Tahoe">Tahoe</option>
+                        <option value="Traverse">Traverse</option>
+                        <option value="Trax">Trax</option>
+                      </>
+                    )}
+                    {activeMake === "Chrysler" && (
+                      <>
+                        <option value="Pacifica">Pacifica</option>
+                        <option value="Voyager">Voyager</option>
+                      </>
+                    )}
+                    {activeMake === "Dodge" && (
+                      <>
+                        <option value="Charger">Charger</option>
+                        <option value="Durango">Durango</option>
+                        <option value="Grand Caravan">Grand Caravan</option>
+                        <option value="Journey">Journey</option>
+                      </>
+                    )}
+                    {activeMake === "Ford" && (
+                      <>
+                        <option value="Bronco">Bronco</option>
+                        <option value="EcoSport">EcoSport</option>
+                        <option value="Edge">Edge</option>
+                        <option value="Escape">Escape</option>
+                        <option value="Expedition">Expedition</option>
+                        <option value="Explorer">Explorer</option>
+                        <option value="F-150">F-150</option>
+                        <option value="F-250">F-250</option>
+                        <option value="F-350">F-350</option>
+                        <option value="Fusion">Fusion</option>
+                        <option value="Mustang">Mustang</option>
+                        <option value="Ranger">Ranger</option>
+                      </>
+                    )}
+                    {activeMake === "GMC" && (
+                      <>
+                        <option value="Acadia">Acadia</option>
+                        <option value="Canyon">Canyon</option>
+                        <option value="Sierra 1500">Sierra 1500</option>
+                        <option value="Sierra 2500 HD">Sierra 2500 HD</option>
+                        <option value="Terrain">Terrain</option>
+                        <option value="Yukon">Yukon</option>
+                      </>
+                    )}
+                    {activeMake === "Honda" && (
+                      <>
+                        <option value="Accord">Accord</option>
+                        <option value="Civic">Civic</option>
+                        <option value="CR-V">CR-V</option>
+                        <option value="HR-V">HR-V</option>
+                        <option value="Odyssey">Odyssey</option>
+                        <option value="Pilot">Pilot</option>
+                        <option value="Ridgeline">Ridgeline</option>
+                      </>
+                    )}
+                    {activeMake === "Hyundai" && (
+                      <>
+                        <option value="Accent">Accent</option>
+                        <option value="Elantra">Elantra</option>
+                        <option value="Kona">Kona</option>
+                        <option value="Palisade">Palisade</option>
+                        <option value="Santa Fe">Santa Fe</option>
+                        <option value="Sonata">Sonata</option>
+                        <option value="Tucson">Tucson</option>
+                        <option value="Venue">Venue</option>
+                      </>
+                    )}
+                    {activeMake === "Infiniti" && (
+                      <>
+                        <option value="Q50">Q50</option>
+                        <option value="Q60">Q60</option>
+                        <option value="QX50">QX50</option>
+                        <option value="QX60">QX60</option>
+                        <option value="QX80">QX80</option>
+                      </>
+                    )}
+                    {activeMake === "Jaguar" && (
+                      <>
+                        <option value="E-Pace">E-Pace</option>
+                        <option value="F-Pace">F-Pace</option>
+                        <option value="I-Pace">I-Pace</option>
+                        <option value="XE">XE</option>
+                        <option value="XF">XF</option>
+                        <option value="XJ">XJ</option>
+                      </>
+                    )}
+                    {activeMake === "Jeep" && (
+                      <>
+                        <option value="Cherokee">Cherokee</option>
+                        <option value="Compass">Compass</option>
+                        <option value="Gladiator">Gladiator</option>
+                        <option value="Grand Cherokee">Grand Cherokee</option>
+                        <option value="Renegade">Renegade</option>
+                        <option value="Wrangler">Wrangler</option>
+                      </>
+                    )}
+                    {activeMake === "Kia" && (
+                      <>
+                        <option value="Forte">Forte</option>
+                        <option value="K5">K5</option>
+                        <option value="Niro">Niro</option>
+                        <option value="Seltos">Seltos</option>
+                        <option value="Sorento">Sorento</option>
+                        <option value="Soul">Soul</option>
+                        <option value="Sportage">Sportage</option>
+                        <option value="Stinger">Stinger</option>
+                      </>
+                    )}
+                    {activeMake === "Land Rover" && (
+                      <>
+                        <option value="Defender">Defender</option>
+                        <option value="Discovery">Discovery</option>
+                        <option value="Discovery Sport">Discovery Sport</option>
+                        <option value="Range Rover">Range Rover</option>
+                        <option value="Range Rover Evoque">
+                          Range Rover Evoque
+                        </option>
+                        <option value="Range Rover Sport">
+                          Range Rover Sport
+                        </option>
+                        <option value="Range Rover Velar">
+                          Range Rover Velar
+                        </option>
+                      </>
+                    )}
+                    {activeMake === "Lexus" && (
+                      <>
+                        <option value="ES 350">ES 350</option>
+                        <option value="GX 460">GX 460</option>
+                        <option value="IS 300">IS 300</option>
+                        <option value="LS 500">LS 500</option>
+                        <option value="NX 300">NX 300</option>
+                        <option value="RX 350">RX 350</option>
+                        <option value="RX 450h">RX 450h</option>
+                        <option value="UX 200">UX 200</option>
+                      </>
+                    )}
+                    {activeMake === "Lincoln" && (
+                      <>
+                        <option value="Aviator">Aviator</option>
+                        <option value="Corsair">Corsair</option>
+                        <option value="Nautilus">Nautilus</option>
+                        <option value="Navigator">Navigator</option>
+                      </>
+                    )}
+                    {activeMake === "Mazda" && (
+                      <>
+                        <option value="CX-30">CX-30</option>
+                        <option value="CX-5">CX-5</option>
+                        <option value="CX-9">CX-9</option>
+                        <option value="Mazda3">Mazda3</option>
+                        <option value="Mazda6">Mazda6</option>
+                      </>
+                    )}
+                    {activeMake === "Mercedes-Benz" && (
+                      <>
+                        <option value="A 220">A 220</option>
+                        <option value="C 300">C 300</option>
+                        <option value="E 350">E 350</option>
+                        <option value="GLA 250">GLA 250</option>
+                        <option value="GLB 250">GLB 250</option>
+                        <option value="GLC 300">GLC 300</option>
+                        <option value="GLE 350">GLE 350</option>
+                        <option value="GLS 450">GLS 450</option>
+                        <option value="S 450">S 450</option>
+                      </>
+                    )}
+                    {activeMake === "Mini" && (
+                      <>
+                        <option value="Cooper">Cooper</option>
+                        <option value="Countryman">Countryman</option>
+                        <option value="Hardtop 2 Door">Hardtop 2 Door</option>
+                        <option value="Hardtop 4 Door">Hardtop 4 Door</option>
+                      </>
+                    )}
+                    {activeMake === "Mitsubishi" && (
+                      <>
+                        <option value="Eclipse Cross">Eclipse Cross</option>
+                        <option value="Outlander">Outlander</option>
+                        <option value="Outlander Sport">Outlander Sport</option>
+                      </>
+                    )}
+                    {activeMake === "Nissan" && (
+                      <>
+                        <option value="Altima">Altima</option>
+                        <option value="Kicks">Kicks</option>
+                        <option value="Murano">Murano</option>
+                        <option value="Rogue">Rogue</option>
+                        <option value="Sentra">Sentra</option>
+                        <option value="Titan">Titan</option>
+                      </>
+                    )}
+                    {activeMake === "Porsche" && (
+                      <>
+                        <option value="Cayenne">Cayenne</option>
+                        <option value="Macan">Macan</option>
+                        <option value="Panamera">Panamera</option>
+                      </>
+                    )}
+                    {activeMake === "Ram" && (
+                      <>
+                        <option value="1500">1500</option>
+                        <option value="2500">2500</option>
+                        <option value="3500">3500</option>
+                      </>
+                    )}
+                    {activeMake === "Subaru" && (
+                      <>
+                        <option value="Ascent">Ascent</option>
+                        <option value="Crosstrek">Crosstrek</option>
+                        <option value="Forester">Forester</option>
+                        <option value="Impreza">Impreza</option>
+                        <option value="Legacy">Legacy</option>
+                        <option value="Outback">Outback</option>
+                      </>
+                    )}
+                    {activeMake === "Toyota" && (
+                      <>
+                        <option value="4Runner">4Runner</option>
+                        <option value="Camry">Camry</option>
+                        <option value="Corolla">Corolla</option>
+                        <option value="Highlander">Highlander</option>
+                        <option value="RAV4">RAV4</option>
+                        <option value="Sienna">Sienna</option>
+                        <option value="Tacoma">Tacoma</option>
+                        <option value="Tundra">Tundra</option>
+                      </>
+                    )}
+                    {activeMake === "Volkswagen" && (
+                      <>
+                        <option value="Atlas">Atlas</option>
+                        <option value="Golf GTI">Golf GTI</option>
+                        <option value="Jetta">Jetta</option>
+                        <option value="Passat">Passat</option>
+                        <option value="Tiguan">Tiguan</option>
+                      </>
+                    )}
+                    {activeMake === "Volvo" && (
+                      <>
+                        <option value="S60">S60</option>
+                        <option value="S90">S90</option>
+                        <option value="V60">V60</option>
+                        <option value="V90">V90</option>
+                        <option value="XC40">XC40</option>
+                        <option value="XC60">XC60</option>
+                        <option value="XC90">XC90</option>
+                      </>
+                    )}
+                    {activeMake === "Tesla" && (
+                      <>
+                        <option value="Model 3">Model 3</option>
+                        <option value="Model S">Model S</option>
+                        <option value="Model X">Model X</option>
+                        <option value="Model Y">Model Y</option>
+                      </>
+                    )}
+                    {activeMake === "Land Rover" && (
+                      <>
+                        <option value="Defender">Defender</option>
+                        <option value="Discovery">Discovery</option>
+                        <option value="Discovery Sport">Discovery Sport</option>
+                        <option value="Range Rover">Range Rover</option>
+                        <option value="Range Rover Evoque">
+                          Range Rover Evoque
+                        </option>
+                        <option value="Range Rover Sport">
+                          Range Rover Sport
+                        </option>
+                        <option value="Range Rover Velar">
+                          Range Rover Velar
+                        </option>
+                      </>
+                    )}
                   </select>
-
                   <select
                     className="form-select"
                     aria-label="Trim"
                     value={trim}
                     onChange={(e) => setTrim(e.target.value)}
+                    required
                   >
                     <option value="" disabled>
                       Trim
@@ -367,7 +719,6 @@ const Home = () => {
                     <option value="Trim1">Trim 1</option>
                     <option value="Trim2">Trim 2</option>
                   </select>
-
                   <button type="submit" className="btn btn-shop">
                     <span className="w-6" style={{ color: "white" }}>
                       SHOP TIRES & BOOK APPOINTMENT
@@ -375,7 +726,6 @@ const Home = () => {
                   </button>
                 </form>
               )}
-
               {tabs === "size" && (
                 <form>
                   <select className="form-select" aria-label="Year">
@@ -508,10 +858,9 @@ const Home = () => {
                 Did You Know We Are a Full Service Shop?
               </h2>
               <p>
-                We don't just have the best tire prices in the Greater
-                Philadelphia Area, we are also a full-service automotive
-                maintenance and repair destination, with Master Techs on staff
-                in every store!
+                Each service listed below includes a trust badge that assures
+                quality, customer satisfaction, or other certifications to
+                enhance credibility.
               </p>
             </div>
           </div>
@@ -539,28 +888,27 @@ const Home = () => {
                 Flexibility For Your Convenience
               </h2>
               <p>
-                Appointment or Same-Day Service*. Drop-off or wait. We take your
-                time seriously, and we'll always do our best to work around the
-                demands of your busy schedule.
+                Booking is just a click away. Schedule your service online,
+                easily and conveniently.
               </p>
-              <p className="small-print">
+              {/* <p className="small-print">
                 *Same-Day Service only available until shop reaches booking
                 capacity for the day. Please call ahead to confirm availability.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
         <div className="middle-content">
           <div className="amenity-row">
             <div className="amenity">
-              <img src={ArmChair} alt="" className="color-image"/>
+              <img src={ArmChair} alt="" className="color-image" />
               <div>
                 <h5>After Hours Drop Box</h5>
                 <p>Securely drop your vehicle off any time, 24 hours a day.</p>
               </div>
             </div>
             <div className="amenity">
-              <img src={Lockbox} alt="" className="color-image"/>
+              <img src={Lockbox} alt="" className="color-image" />
               <div>
                 <h5>Complimentary Lyft Ride</h5>
                 <p>
@@ -575,7 +923,7 @@ const Home = () => {
           </div>
           <div className="amenity-row">
             <div className="amenity">
-              <img src={TaxiImage} alt="" className="color-image"/>
+              <img src={TaxiImage} alt="" className="color-image" />
               <div>
                 <h5>Comfortable Amenities</h5>
                 <p>
@@ -585,7 +933,7 @@ const Home = () => {
               </div>
             </div>
             <div className="amenity">
-              <img src={TodayImage} alt="" className="color-image"/>
+              <img src={TodayImage} alt="" className="color-image" />
               <div>
                 <h5>Same-Day Service Available</h5>
                 <p>
