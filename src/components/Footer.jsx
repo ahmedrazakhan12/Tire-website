@@ -98,7 +98,7 @@ const Footer = () => {
     <footer style={containerStyle}>
       <div style={topSectionStyle}>
         <div style={infoBoxStyle}>
-          <MapPin size={70} style={{ marginRight: "10px", color: "#f47121" }} />
+          <MapPin size={70} style={{ marginRight: "10px", color: "#ee2424" }} />
           <div>
             <h3 style={headingStyle}>
               <span style={{ color: "#2E4E53" }}>Our Location</span>
@@ -109,7 +109,7 @@ const Footer = () => {
           </div>
         </div>
         <div style={infoBoxStyle}>
-          <Phone size={70} style={{ marginRight: "10px", color: "#f47121" }} />
+          <Phone size={70} style={{ marginRight: "10px", color: "#ee2424" }} />
           <div>
             <h3 style={headingStyle}>
               <span style={{ color: "#2E4E53" }}>Call Us</span>
@@ -118,7 +118,7 @@ const Footer = () => {
           </div>
         </div>
         <div style={infoBoxStyle}>
-          <Mail size={70} style={{ marginRight: "10px", color: "#f47121" }} />
+          <Mail size={70} style={{ marginRight: "10px", color: "#ee2424" }} />
           <div>
             <h3 style={headingStyle}>
               <span style={{ color: "#2E4E53" }}>Email Us</span>
@@ -133,7 +133,7 @@ const Footer = () => {
         <div
           style={{
             ...columnStyle,
-            backgroundColor: "#f47121",
+            backgroundColor: "#ee2424",
             width: "100%",
             textAlign: "center", // Center content on smaller screens
           }}
@@ -196,8 +196,8 @@ const Footer = () => {
           <a href="#" style={linkStyle}>Services status</a>
           <a href="#" style={linkStyle}>Report a bug</a>
           <div style={{ display: "flex", alignItems: "center", marginTop: "20px" }}>
-            <a href="#" style={{ color: "#f47121", marginRight: "20px", textDecoration: "none" }}>Terms of Use</a>
-            <a href="#" style={{ color: "#f47121", textDecoration: "none" }}>Privacy Policy</a>
+            <a href="#" style={{ color: "#ee2424", marginRight: "20px", textDecoration: "none" }}>Terms of Use</a>
+            <a href="#" style={{ color: "#ee2424", textDecoration: "none" }}>Privacy Policy</a>
           </div>
         </div>
       </div>

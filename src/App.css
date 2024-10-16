@@ -20,7 +20,7 @@
   height: 30px;
 }
 .color-image{
-  filter: brightness(0) saturate(100%) invert(52%) sepia(44%) saturate(2933%) hue-rotate(348deg) brightness(99%) contrast(94%);
+  filter: brightness(0) saturate(100%) invert(21%) sepia(96%) saturate(3711%) hue-rotate(353deg) brightness(104%) contrast(87%); /* filter: brightness(0) saturate(100%) invert(52%) sepia(44%) saturate(2933%) hue-rotate(348deg) brightness(99%) contrast(94%); */
 }
 
 .form-container {
@@ -42,7 +42,7 @@
 }
 
 .form-title {
-  color: #f47121 !important;
+  color: #ee2424 !important;
   font-size: 28px !important;
   font-weight: 900 !important;
   margin-bottom: 20px !important;
@@ -98,7 +98,7 @@
 }
 
 .btn-shop {
-  background-color: #f47121 !important;
+  background-color: #ee2424 !important;
   border: none !important;
   color: #040404;
   font-weight: 600 !important;
@@ -384,7 +384,7 @@ body {
 }
 
 .anchorTag:hover {
-  color: #f47121 !important;
+  color: #ee2424 !important;
 }
 
 .pTag:hover {
@@ -392,7 +392,7 @@ body {
 }
 
 .pTag {
-  background-color: "#f47121" !important;
+  background-color: "#ee2424" !important;
 }
 
 .timeline ul {
@@ -473,7 +473,7 @@ time {
 }
 
 .timeline ul li.in-view::after {
-  background: #f47121;
+  background: #ee2424;
 }
 
 .timeline ul li div {
@@ -628,7 +628,7 @@ time {
   width: 100%;
   padding: 12px;
   font-size: 16px;
-  background-color: #f47121;
+  background-color: #ee2424;
   border: none;
   border-radius: 4px;
   color: white;
@@ -703,12 +703,12 @@ time {
   padding: 10px;
   font-size: 1.1em;
   display: block;
-  color: #f47121;
+  color: #ee2424;
 }
 
 #sidebar ul li a:hover {
   color: white;
-  background: #f47121;
+  background: #ee2424;
 }
 
 .overlay {
@@ -823,7 +823,7 @@ h1 {
 }
 
 .remove-product {
-  background-color: #f47121;
+  background-color: #ee2424;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -915,12 +915,12 @@ h1 {
       }
   }
   [aria-expanded="true"]{
-      background: #f47121;
+      background: #ee2424;
       color: #ffffff;
       i {
         color: #ffffff;
         ;
-          background: #f47121;
+          background: #ee2424;
         &:before{
               content: "\f068" ;
           }

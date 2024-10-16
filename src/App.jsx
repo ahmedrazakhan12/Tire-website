@@ -68,7 +68,7 @@ function App() {
       icon: <ShoppingCart />, // Custom icon
       style: {
         borderRadius: "8px",
-        color: "#f47121", // Custom text color
+        color: "#ee2424", // Custom text color
       },
     });
 
@@ -96,7 +96,7 @@ function App() {
         <a
           href="/view-cart"
           style={{
-            background: "#f47121",
+            background: "#ee2424",
             borderRadius: "50%",
             cursor: "pointer",
             padding: "11px",

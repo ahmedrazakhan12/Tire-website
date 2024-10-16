@@ -187,7 +187,7 @@ const Home = () => {
                     .lyft-banner {
                       display: flex;
                       align-items: center;
-                      background-color: #f47121;
+                      background-color: #ee2424;
                       color: white;
                       padding: 0px 35px;
                       border-radius: 8px;
@@ -640,7 +640,7 @@ const Home = () => {
                   }}
                 >
                   <CalendarRangeIcon
-                    style={{ color: "#f47121", height: "20px", width: "20px" }}
+                    style={{ color: "#ee2424", height: "20px", width: "20px" }}
                   />
                   <span
                     className="address text-left "
@@ -648,7 +648,7 @@ const Home = () => {
                       textAlign: "left",
                       marginTop: "20px",
                       fontWeight: "800",
-                      color: "#f47121",
+                      color: "#ee2424",
                       fontSize: "15px",
                     }}
                   >
@@ -662,7 +662,7 @@ const Home = () => {
                     401 S Dupont Hwy LOT B, New Castle, DE 19720, United States
                   </p>
                   {/* <CalendarRangeIcon
-                    style={{ color: "#f47121", height: "20px", width: "20px" }}
+                    style={{ color: "#ee2424", height: "20px", width: "20px" }}
                   />{" "} */}
                   {/* <span
                     className="address text-left "
@@ -671,7 +671,7 @@ const Home = () => {
                       marginTop: "20px",
                       fontWeight: "800",
                       fontSize: "15px",
-                      color: "#f47121",
+                      color: "#ee2424",
                     }}
                   >
                     Wilmington Location: :
@@ -743,7 +743,7 @@ const Home = () => {
           >
             <p
               style={{
-                backgroundColor: "#f47121",
+                backgroundColor: "#ee2424",
                 padding: "10px",
                 borderRadius: "15px",
                 paddingLeft: "15px",
@@ -765,7 +765,7 @@ const Home = () => {
             </p>
             <p
               style={{
-                backgroundColor: "#f47121",
+                backgroundColor: "#ee2424",
                 padding: "10px",
                 borderRadius: "15px",
                 paddingLeft: "15px",
