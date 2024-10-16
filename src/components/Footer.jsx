@@ -97,7 +97,7 @@ const Footer = () => {
     <footer style={containerStyle}>
       <div style={topSectionStyle}>
         <div style={infoBoxStyle}>
-          <MapPin size={70} style={{ marginRight: "10px", color: "#ee2424" }} />
+          <MapPin size={70} style={{ marginRight: "35px", transform:"scale(3)", color: "#ee2424" }} />
           <div>
             <h3 style={headingStyle}>
               <span style={{ color: "#2E4E53" }}>Our Location</span>
@@ -105,9 +105,9 @@ const Footer = () => {
             <p style={{ fontSize: "14px" }}>
               401 S Dupont Hwy LOT B, New Castle, DE 19720, United States
             </p>
-            <p style={{ fontSize: "14px" }}>
+            {/* <p style={{ fontSize: "14px" }}>
               Wilmington: 456 Elm Street, Wilmington, Delaware, 19801
-            </p>
+            </p> */}
           </div>
         </div>
         <div style={infoBoxStyle}>
