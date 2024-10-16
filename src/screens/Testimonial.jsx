@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card } from 'react-bootstrap';
 
 const testimonials = [
   {
@@ -56,31 +57,55 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <div className="container mt-5">
-      <h2 className="text-center mb-4">Customer Testimonials - Tire Aligners</h2>
+      <h2 className="text-center mb-4">Customer Testimonials <span style={{color: '#ee2424'}}>- Tire Aligners</span></h2>
       <p className="text-center mb-5">
         We pride ourselves on delivering excellent automotive services and the satisfaction of our customers is our top priority. Here are some testimonials from our happy clients:
       </p>
 
+      <div className="container p-5 " style={{background:"#ff61000f"}}>
       <div className="row">
         {testimonials.map((testimonial, index) => (
           <div className="col-md-6 mb-4" key={index}>
-            <div className="card testimonial-card">
-              <div className="card-body">
-                <p className="card-text">"{testimonial.feedback}"</p>
-                <h5 className="card-title">- {testimonial.name}</h5>
-              </div>
-            </div>
+            <Card className="h-100 shadow-sm hover-shadow transition" >
+              <Card.Body className="d-flex flex-column justify-content-between p-4">
+                <div>
+                  
+                  <Card.Text className="text-muted mb-3" style={{ fontSize: '1.1rem', fontStyle: 'italic' }}>
+                   <span style={{color: '#ee2424'}}>"</span>{testimonial.feedback}<span style={{color: '#ee2424'}}>"</span>
+                  </Card.Text>
+                </div>
+                <div>
+                  <Card.Title className="text-primary mb-0" style={{ fontWeight: '600', fontSize: '1.25rem' }}>
+                    - {testimonial.name}
+                  </Card.Title>
+                  {testimonial.position && (
+                    <Card.Subtitle className="text-secondary mt-1" style={{ fontSize: '0.9rem' }}>
+                      {testimonial.position}
+                    </Card.Subtitle>
+                  )}
+                </div>
+              </Card.Body>
+            </Card>
           </div>
         ))}
       </div>
+    </div>
+
 
       <div className="text-center mt-5">
         <h5>We thank our customers for their trust and loyalty.</h5>
         <p>Your satisfaction drives our commitment to excellence.</p>
         <p>Visit us and experience the Tire Aligners difference for yourself!</p>
+       <br />
         <a
-          href="https://www.google.com/maps/place/Tire+Aligners" 
-          className="btn btn-primary"
+          // href="https://www.google.com/maps/place/Tire+Aligners" 
+          className=""
+          style={{
+            backgroundColor: "#ee2424",
+            color: "white",
+            borderRadius: "5px",
+            padding: "10px 20px",
+          }}
           target="_blank"
           rel="noopener noreferrer"
         >

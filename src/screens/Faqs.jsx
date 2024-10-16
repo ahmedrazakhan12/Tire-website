@@ -57,7 +57,7 @@ const FAQPage = () => {
 
   return (
     <div className="container mt-5">
-      <h1 className="text-center mb-4">Frequently Asked Questions - Tire Aligners</h1>
+      <h1 className="text-center mb-4">Frequently Asked Questions <span style={{color: '#ee2424'}}>- Tire Aligners</span></h1>
       <div className="container">
         <div id="accordion" className="py-5">
           {faqs.map(({ id, question, answer }) => (

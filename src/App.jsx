@@ -96,7 +96,7 @@ function App() {
         <a
           href="/view-cart"
           style={{
-            background: "#ee2424",
+            background: "#f47121",
             borderRadius: "50%",
             cursor: "pointer",
             padding: "11px",

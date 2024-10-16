@@ -133,7 +133,7 @@ const Footer = () => {
         <div
           style={{
             ...columnStyle,
-            backgroundColor: "#ee2424",
+            backgroundColor: "#f47121",
             width: "100%",
             textAlign: "center", // Center content on smaller screens
           }}
@@ -161,7 +161,6 @@ const Footer = () => {
             <Instagram size={24} style={socialIconStyle} />
           </div>
         </div>
-
         <div style={{ ...columnStyle, paddingLeft: "30px" }} className="footer-testing">
           <h3 style={headingStyle}>About Us</h3>
           <p>
@@ -176,7 +175,6 @@ const Footer = () => {
             <p>Sat 9 AM - 4 PM,</p>
             <p>Sunday - CLOSED</p>
           </div>
-          <p>Copyright © 2024 Serenite Theme All rights reserved.</p>
         </div>
 
         <div style={columnStyle}>
@@ -195,11 +193,13 @@ const Footer = () => {
           <a href="#" style={linkStyle}>Help center</a>
           <a href="#" style={linkStyle}>Services status</a>
           <a href="#" style={linkStyle}>Report a bug</a>
-          <div style={{ display: "flex", alignItems: "center", marginTop: "20px" }}>
-            <a href="#" style={{ color: "#ee2424", marginRight: "20px", textDecoration: "none" }}>Terms of Use</a>
-            <a href="#" style={{ color: "#ee2424", textDecoration: "none" }}>Privacy Policy</a>
-          </div>
+         
+ {/* <div style={{marginTop:"100px" }}> */}
+            {/* <p style={{marginLeft:"-100px"}}>Copyright © 2024 Serenite Theme All rights reserved.</p> */}
+          {/* </div> */}
         </div>
+<div>
+</div>
       </div>
 
       {/* Media Queries */}

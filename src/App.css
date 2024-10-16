@@ -97,6 +97,13 @@
 
 }
 
+.custom-shadow{
+  -webkit-box-shadow: 0px 1px 34px -16px rgba(255,153,0,1);
+  -moz-box-shadow: 0px 1px 34px -16px rgba(255,153,0,1);
+  box-shadow: 0px 1px 34px -16px rgba(255,153,0,1);
+  
+}
+
 .btn-shop {
   background-color: #ee2424 !important;
   border: none !important;

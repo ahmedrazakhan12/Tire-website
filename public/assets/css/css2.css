@@ -48,7 +48,7 @@ button.link,
 button.link:not([href]):not([tabindex]),
 a:not([href]):not([tabindex]) {
   text-decoration: none;
-  color: #ee2424;
+  color: #f47121;
   cursor: pointer;
 }
 
@@ -199,7 +199,7 @@ button.link-inline {
 
 .btn-primary {
   color: white;
-  background-color: #ee2424;
+  background-color: #f47121;
 }
 
 .btn-primary:hover {
@@ -332,12 +332,12 @@ button.link-inline {
 }
 
 .tab-bar-item:hover {
-  background-color: #ee2424;
+  background-color: #f47121;
   color: white;
 }
 
 .tab-bar-item.selected {
-  background-color: #ee2424;
+  background-color: #f47121;
   color: white;
   cursor: default;
   border: none;
@@ -747,7 +747,7 @@ button.link-inline {
 .app-with-nav ul.app-nav li {
   border-bottom: solid #ddd 2px;
   padding: 1rem 2.5rem 1rem 1rem;
-  color: #ee2424;
+  color: #f47121;
   font-size: 1.25em;
   font-weight: bold;
 }
@@ -1157,7 +1157,7 @@ button.unstyled.link-inline {
 }
 
 .pagination .fas {
-  color: #ee2424;
+  color: #f47121;
   font-size: 28px;
 }
 
@@ -1180,7 +1180,7 @@ button.unstyled.link-inline {
 .pagination-small button,
 .pagination-small span {
   padding: 0 0.75em;
-  color: #ee2424;
+  color: #f47121;
   border-top: solid #aaa 1px;
   border-bottom: solid #aaa 1px;
   border-right: solid #aaa 1px;
@@ -1195,7 +1195,7 @@ button.unstyled.link-inline {
 
 .pagination-small button:disabled,
 .pagination-small span:disabled {
-  background-color: #ee2424;
+  background-color: #f47121;
   color: white;
   border-color: #666;
 }
@@ -1281,7 +1281,7 @@ button.unstyled.link-inline {
 }
 
 .color-blue {
-  color: #ee2424;
+  color: #f47121;
 }
 
 .color-orange {
@@ -1571,7 +1571,7 @@ ul.small-horizontal-bordered li:last-of-type {
   align-items: center;
   font-family: "Courgette", cursive;
   /* font-family: Courgette, sans-serif; */
-  background-color: #ee2424;
+  background-color: #f47121;
   color: white;
   font-size: 1.3rem;
   font-weight: bold;
@@ -1634,7 +1634,7 @@ ul.small-horizontal-bordered li:last-of-type {
 }
 
 .site-header-nav div:hover {
-  color: #ee2424;
+  color: #f47121;
 }
 
 .site-header-nav div:hover .site-header-sub-menu {
@@ -1702,7 +1702,7 @@ ul.small-horizontal-bordered li:last-of-type {
 .site-header-right-row:hover a,
 .site-header-right-row:hover button.link,
 .site-header-right-row:hover button.link-inline {
-  color: #ee2424;
+  color: #f47121;
 }
 
 .site-header-right-row div {
@@ -2439,7 +2439,7 @@ ul.small-horizontal-bordered li:last-of-type {
 }
 
 .tire-search-param-head.active {
-  background-color: #ee2424;
+  background-color: #f47121;
 }
 
 .tire-search-param-head.disabled {
@@ -2475,7 +2475,7 @@ ul.small-horizontal-bordered li:last-of-type {
   margin: 0.6em;
   border-radius: 8px;
   box-shadow: 0 0 8px #333;
-  color: #ee2424;
+  color: #f47121;
   font-size: 1.2em;
   font-family: Montserrat, sans-serif;
 }
@@ -2486,7 +2486,7 @@ ul.small-horizontal-bordered li:last-of-type {
 }
 
 .tire-search-option.selected {
-  background-color: #ee2424;
+  background-color: #f47121;
   color: white;
   cursor: default;
   box-shadow: none;
@@ -2618,7 +2618,7 @@ ul.small-horizontal-bordered li:last-of-type {
 .brand-page-models-container a.model-wrapper:hover,
 .brand-page-models-container button.model-wrapper.link:hover,
 .brand-page-models-container button.model-wrapper.link-inline:hover {
-  box-shadow: 0 0 16px #ee2424;
+  box-shadow: 0 0 16px #f47121;
 }
 
 .brand-page-models-container a.model-wrapper img,
@@ -2834,7 +2834,7 @@ ul.detail-page-specs li span {
 
 .gbb-carousel .carousel-indicators li {
   height: 5px;
-  background-color: #ee2424;
+  background-color: #f47121;
   margin-left: 6px;
   margin-right: 6px;
 }
@@ -2861,7 +2861,7 @@ ul.detail-page-specs li span {
 }
 
 .catalog-head h1 span {
-  color: #ee2424;
+  color: #f47121;
 }
 
 .catalog-container {
@@ -2892,7 +2892,7 @@ ul.detail-page-specs li span {
 }
 
 .clear-filters.blue {
-  color: #ee2424;
+  color: #f47121;
 }
 
 .catalog-filters {
@@ -3042,7 +3042,7 @@ ul.detail-page-specs li span {
 }
 
 .catalog-filters .filter-item .filter-head.active {
-  color: #ee2424;
+  color: #f47121;
 }
 
 .catalog-filters .filter-item .filter-head.active h4 {
@@ -3456,7 +3456,7 @@ ul.detail-page-specs li span {
 }
 
 .m-result-card.gbb-card .gbb-card-header {
-  background-color: #ee2424;
+  background-color: #f47121;
   color: white;
   text-align: center;
   padding: 8px;
@@ -3946,7 +3946,7 @@ table.fitment-options td.split-fitment {
 }
 
 .cart-fee .fee-header.discount {
-  background-color: #ee2424;
+  background-color: #f47121;
   padding: 0.75rem 0.5rem;
   border-radius: 6px;
   color: white;
@@ -4015,7 +4015,7 @@ table.fitment-options td.split-fitment {
   border-radius: 0.25em;
   font-size: 1.4em;
   font-family: Roboto, sans-serif;
-  background-color: #ee2424;
+  background-color: #f47121;
   color: white;
 }
 
@@ -4057,7 +4057,7 @@ table.fitment-options td.split-fitment {
 }
 
 .totals-box .row:last-of-type span:last-of-type {
-  color: #ee2424;
+  color: #f47121;
   font-family: Montserrat, sans-serif;
 }
 
@@ -4482,7 +4482,7 @@ table.fitment-options td.split-fitment {
 
 .special-detail-h1 {
   font-size: 1.8em;
-  color: #ee2424;
+  color: #f47121;
 }
 
 .special-detail-h2 {
@@ -4817,7 +4817,7 @@ table.fitment-options td.split-fitment {
   font-size: 1.5rem;
   font-weight: bold;
   font-family: Montserrat, sans-serif;
-  color: #ee2424;
+  color: #f47121;
 }
 
 .calendar-header div {
@@ -4838,7 +4838,7 @@ table.calendar td {
 }
 
 table.calendar td.available {
-  color: #ee2424;
+  color: #f47121;
   font-family: Roboto, sans-serif;
 }
 
@@ -4854,7 +4854,7 @@ table.calendar td.selected span {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ee2424;
+  background-color: #f47121;
   color: white;
 }
 
@@ -4980,7 +4980,7 @@ table.calendar td.today {
   display: inline-block;
   padding: 2rem;
   border-radius: 50%;
-  background-color: #ee2424;
+  background-color: #f47121;
   color: white;
   font-weight: bold;
   text-align: center;
