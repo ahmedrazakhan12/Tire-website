@@ -104,6 +104,14 @@
   
 }
 
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 3px;
+}
+
+
 .btn-shop {
   background-color: #ee2424 !important;
   border: none !important;
@@ -957,4 +965,11 @@ h1 {
 .card-text {
   font-style: italic;
   color: #555;
+}
+
+.my-clip{
+  clip-path: polygon(0 0, 100% 0, 100% 19%, 50% 100%, 50% 100%, 0 19%);
+}
+.my-custom-btn-hover:hover {
+  background-color: #c80d29 !important;
 }

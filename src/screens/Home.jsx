@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import BankCard from "../assets/images/bank-card.png";
 import BankCard2 from "../assets/images/bank-card2.png";
 import SnapCard from "../assets/images/snap-logo.png";
+import TireImage from "../assets/images/tire.png";
 import {
   CalendarRangeIcon,
   MessageSquare,
@@ -98,6 +99,18 @@ const Home = () => {
     }
   };
 
+  const data ={
+    offerImage: TireImage,
+    heading : "GET A $100 REBATE*",
+    subheading : "WHEN YOU PURCHASE A SET OF FOUR (4) QUALIFYING GENERAL TIRES",
+    buttonText : "LEARN HOW",
+    offerValid : "OFFER VALID: 9/1 - 10/31/24",
+    termsText : "*See terms for details",
+    imageSrc : "TireImage",
+    imageAlt : "Tire"
+  }
+  
+
   return (
     <>
       <div className=" wrapper">
@@ -118,7 +131,7 @@ const Home = () => {
                 style={{ overflow: "hidden", width: "400px" }}
               >
                 <Carousel indicators={false} nextLabel="dsad" prevLabel="">
-                  <Carousel.Item>
+                {/* <Carousel.Item>
                     <a href="/specials/tire-specials/general-rebate/">
                       <img
                         className="d-block w-100"
@@ -126,6 +139,64 @@ const Home = () => {
                         alt="General: $100 Rebate"
                       />
                     </a>
+                  </Carousel.Item> */}
+                  <Carousel.Item>
+                    {/* <a href="/specials/tire-specials/general-rebate/">
+                      <img
+                        className="d-block w-100"
+                        src="https://tiresetc-media-files.s3.amazonaws.com/images/specials/2024-09-01-general-rebate-list-image.webp"
+                        alt="General: $100 Rebate"
+                      />
+                    </a> */}
+                    
+                    <div
+  className="position-relative mx-auto bg-dark text-white rounded-lg overflow-hidden"
+  style={{ height: "270px" }}
+>
+  <div
+    className="position-absolute"
+    style={{   opacity: "0.2", height: "100px" }}
+  />
+  <div className="position-relative z-10">
+    <div className="py-2 px-4 my-clip" style={{ background: "#a7192e" }}>
+      <p className="text-center font-weight-bold pb-3 bebas-neue-regular"></p>
+    </div>
+    <div className="px-5 py-4">
+      <h3 className="text-center font-weight-bold pb-2 bebas-neue-regular" style={{ borderBottom: "1px solid #a7192e" }}>
+        {data.heading}
+      </h3>
+      <p className="lead text-center font-bold" style={{ fontSize: "13px" }}>
+        {data.subheading}
+      </p>
+      <button
+        className="btn btn-danger my-custom-btn-hover btn-lg font-weight-semibold mx-4"
+        style={{ borderRadius: "0", background: "#a7192e", position: "absolute", right: "10px" }}
+      >
+        {data.buttonText}
+      </button>
+      <br />
+      <br />
+      <p className="small bebas-neue-regular ml-3" style={{ float: "right", fontSize: "12px", marginRight: "-25px" }}>
+        {data.offerValid}
+      </p>
+      <p className="text-muted small bebas-neue-regular ml-3" style={{ float: "right", fontSize: "12px", marginRight: "-25px" }}>
+        {data.termsText}
+      </p>
+    </div>
+  </div>
+
+  <div className="position-absolute bottom-0 start-0" style={{ width: "33%" }}>
+    <img
+      src={data.offerImage}
+      alt={""}
+      className="img-fluid"
+      style={{ height: "100px", width: "300px" }}
+    />
+  </div>
+</div>
+    
+
+
                   </Carousel.Item>
                   <Carousel.Item>
                     <a href="/specials/tire-specials/free-installation-on-select-brands/">
@@ -795,6 +866,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+
         {/* Brand Strip */}
         <div className="middle-content">
           <div className="brand-strip">
